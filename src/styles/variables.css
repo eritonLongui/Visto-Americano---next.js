@@ -1,0 +1,40 @@
+/* Sistema de Design e Variáveis do Projeto (Padrão BEM) */
+
+:root {
+  /* Cores de Fundo (Escuros/Pretos) */
+  --color-bg-primary: #14171A;
+  --color-bg-secondary: #1F2328;
+  --color-bg-tertiary: #23272D;
+  --color-bg-accent: #2C3036;
+
+  /* Azuis (Confiança e Autoridade) */
+  --color-blue-dark: #002F4C;
+  --color-blue-brand: #00629E;
+  --color-blue-light: #e6f0fa;
+
+  /* Vermelhos (Destaque e CTA) */
+  --color-red-brand: #8C1C29;
+  --color-red-active: #BB0016;
+
+  /* Claros (Legibilidade e Sofisticação) */
+  --color-text-primary: #E2E6E9;
+  --color-text-secondary: #a0aab5;
+  --color-text-muted: #6e7985;
+  --color-light-warm: #F7F4EE;
+  
+  /* Fontes (Conforme tipografia.png e PDA) */
+  --font-title: 'Kameron', Georgia, serif;
+  --font-body: 'Kufam', system-ui, -apple-system, sans-serif;
+
+  /* Efeitos e Espaçamentos */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+  --border-radius-full: 9999px;
+
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+
+  --max-width-container: 1200px;
+}

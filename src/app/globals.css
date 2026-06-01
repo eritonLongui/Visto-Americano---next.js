@@ -1,0 +1,131 @@
+/* Importação de Fontes Premium do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Kameron:wght@400;700&family=Kufam:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* Importação das Variáveis de Design */
+@import '../styles/variables.css';
+
+/* Reset CSS Sóbrio e Moderno */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tipografia Base */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+  color: var(--color-light-warm);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+p {
+  color: var(--color-text-secondary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* Classes Utilitárias Globais (Padrão BEM) */
+.container {
+  width: 100%;
+  max-width: var(--max-width-container);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.button-premium {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: var(--border-radius-sm);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button-premium--primary {
+  background-color: var(--color-red-brand);
+  color: var(--color-light-warm);
+  border: 1px solid var(--color-red-brand);
+}
+
+.button-premium--primary:hover {
+  background-color: var(--color-red-active);
+  border-color: var(--color-red-active);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(187, 0, 22, 0.25);
+}
+
+.button-premium--primary:active {
+  transform: translateY(0);
+}
+
+.button-premium--secondary {
+  background-color: transparent;
+  color: var(--color-light-warm);
+  border: 1px solid var(--color-bg-accent);
+}
+
+.button-premium--secondary:hover {
+  background-color: var(--color-bg-secondary);
+  border-color: var(--color-text-secondary);
+  transform: translateY(-2px);
+}
+
+.button-premium--secondary:active {
+  transform: translateY(0);
+}
+
+/* Efeito de Backdrop Glass */
+.glass-effect {
+  background: rgba(31, 35, 40, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(44, 48, 54, 0.5);
+}
+
+/* Animações e Transições Globais */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+}

@@ -1,0 +1,186 @@
+/* Estilos do Componente VisaTypes - Padrão BEM */
+
+.visa-types {
+  padding: 120px 0;
+  background-color: var(--color-bg-secondary);
+  border-top: 1px solid rgba(44, 48, 54, 0.4);
+  border-bottom: 1px solid rgba(44, 48, 54, 0.4);
+  position: relative;
+}
+
+.visa-types__header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 80px;
+}
+
+.visa-types__subtitle {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-red-brand);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.visa-types__title {
+  font-size: 2.5rem;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.visa-types__description {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.visa-types__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.visa-types__card {
+  background-color: var(--color-bg-tertiary);
+  border: 1px solid var(--color-bg-accent);
+  border-radius: var(--border-radius-md);
+  padding: 60px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.visa-types__card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-blue-brand);
+  box-shadow: 0 15px 45px rgba(0, 47, 76, 0.15);
+}
+
+.visa-types__card-badge {
+  position: absolute;
+  top: 40px;
+  right: 50px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 4px 12px;
+  border-radius: var(--border-radius-full);
+  background-color: rgba(0, 98, 158, 0.1);
+  border: 1px solid rgba(0, 98, 158, 0.3);
+  color: var(--color-blue-brand);
+}
+
+.visa-types__card--eb1 .visa-types__card-badge {
+  background-color: rgba(140, 28, 41, 0.1);
+  border: 1px solid rgba(140, 28, 41, 0.3);
+  color: #ff4d62;
+}
+
+.visa-types__card-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-light-warm);
+  margin-bottom: 8px;
+}
+
+.visa-types__card-fullName {
+  font-size: 1rem;
+  font-family: var(--font-body);
+  color: var(--color-text-secondary);
+  margin-bottom: 32px;
+  font-weight: 500;
+}
+
+.visa-types__card-description {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: 40px;
+  min-height: 100px;
+}
+
+.visa-types__card-specs {
+  border-top: 1px solid var(--color-bg-accent);
+  padding-top: 32px;
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.visa-types__spec-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.visa-types__spec-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  letter-spacing: 0.08em;
+}
+
+.visa-types__spec-value {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.visa-types__cta {
+  width: 100%;
+}
+
+/* Responsividade */
+@media (max-width: 991px) {
+  .visa-types__grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .visa-types__card {
+    padding: 40px;
+  }
+  
+  .visa-types__card-badge {
+    top: 30px;
+    right: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .visa-types {
+    padding: 80px 0;
+  }
+
+  .visa-types__title {
+    font-size: 2rem;
+  }
+
+  .visa-types__description {
+    font-size: 1rem;
+  }
+
+  .visa-types__card {
+    padding: 30px;
+  }
+
+  .visa-types__card-badge {
+    position: relative;
+    top: auto;
+    right: auto;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  
+  .visa-types__card-name {
+    font-size: 2rem;
+  }
+}

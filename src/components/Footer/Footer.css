@@ -1,0 +1,128 @@
+/* Estilos do Componente Footer - Padrão BEM */
+
+.footer {
+  background-color: var(--color-bg-primary);
+  border-top: 1px solid rgba(44, 48, 54, 0.4);
+  padding: 80px 0 40px;
+  color: var(--color-text-secondary);
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.footer__branding {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer__brand-nostrali {
+  font-family: var(--font-title);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-light-warm);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.footer__brand-divider {
+  width: 1px;
+  height: 16px;
+  background-color: var(--color-bg-accent);
+}
+
+.footer__brand-oceanik {
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.footer__tagline {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 320px;
+}
+
+.footer__section-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-light-warm);
+  letter-spacing: 0.08em;
+  margin-bottom: 24px;
+}
+
+.footer__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer__link {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+.footer__link:hover {
+  color: var(--color-light-warm);
+}
+
+/* Linha inferior com disclaimer legal e direitos */
+.footer__bottom {
+  border-top: 1px solid rgba(44, 48, 54, 0.4);
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer__disclaimer {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.footer__copyright {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Responsividade */
+@media (max-width: 767px) {
+  .footer {
+    padding: 60px 0 30px;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .footer__copyright {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

@@ -1,0 +1,174 @@
+/* Estilos do Componente Process - Padrão BEM */
+
+.process {
+  padding: 120px 0;
+  background-color: var(--color-bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.process__header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 80px;
+}
+
+.process__subtitle {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-red-brand);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.process__title {
+  font-size: 2.5rem;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.process__description {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* Timeline Horizontal no Desktop e Vertical no Mobile */
+.process__timeline {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 60px;
+  gap: 30px;
+}
+
+/* Linha conectora de fundo */
+.process__timeline::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 5%;
+  right: 5%;
+  height: 1px;
+  background-color: var(--color-bg-accent);
+  z-index: 1;
+}
+
+.process__step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.process__step-number {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--border-radius-full);
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-bg-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-title);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-light-warm);
+  margin-bottom: 28px;
+  transition: all var(--transition-normal);
+}
+
+.process__step:hover .process__step-number {
+  border-color: var(--color-blue-brand);
+  background-color: var(--color-blue-dark);
+  box-shadow: 0 0 20px rgba(0, 98, 158, 0.4);
+  transform: scale(1.05);
+}
+
+.process__step-title {
+  font-size: 1.15rem;
+  margin-bottom: 12px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--color-light-warm);
+}
+
+.process__step-text {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  max-width: 220px;
+}
+
+/* Responsividade */
+@media (max-width: 991px) {
+  .process__timeline {
+    flex-direction: column;
+    gap: 50px;
+    align-items: flex-start;
+    padding-left: 40px;
+  }
+  
+  .process__timeline::before {
+    top: 5%;
+    bottom: 5%;
+    left: 80px; /* Alinhado ao centro do círculo no mobile */
+    width: 1px;
+    height: 90%;
+  }
+
+  .process__step {
+    flex-direction: row;
+    text-align: left;
+    gap: 30px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .process__step-number {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .process__step-text {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .process {
+    padding: 80px 0;
+  }
+
+  .process__title {
+    font-size: 2rem;
+  }
+
+  .process__description {
+    font-size: 1rem;
+  }
+
+  .process__timeline {
+    padding-left: 10px;
+  }
+
+  .process__timeline::before {
+    left: 40px;
+  }
+
+  .process__step-number {
+    width: 60px;
+    height: 60px;
+    font-size: 1.3rem;
+  }
+
+  .process__step {
+    gap: 20px;
+  }
+}
