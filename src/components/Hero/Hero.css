@@ -2,38 +2,50 @@
 
 .hero {
   position: relative;
-  height: calc(100vh - 100px); /* Ocupa a tela inteira descontando o header */
+  height: calc(100vh - 80px); /* Ocupa a tela inteira descontando o header */
   min-height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-bg-primary);
+  background-color: var(--color-bg-secondary);
   overflow: hidden;
 }
 
-/* Formas Orgânicas Laterais do Figma (hero.png) */
+
 .hero__shape {
   position: absolute;
-  width: 40vw;
-  height: 90vh;
-  background-color: var(--color-bg-secondary);
+  height: 180vh;
   opacity: 0.8;
   pointer-events: none;
   z-index: 1;
 }
 
 .hero__shape--left {
-  top: 5vh;
-  left: -20vw;
-  border-radius: 0 500px 500px 0;
-  border-right: 1px solid rgba(204, 199, 193, 0.2);
+  bottom: -100vh;
+  left: 0;
 }
 
 .hero__shape--right {
-  bottom: 5vh;
-  right: -20vw;
-  border-radius: 500px 0 0 500px;
-  border-left: 1px solid rgba(204, 199, 193, 0.2);
+  top: -100vh;
+  right: 0;
+  transform: scale(-1, -1);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url('/textura_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  mix-blend-mode: plus-darker;
+  opacity: 0.15;
+
+  pointer-events: none;
+  z-index: 1;
 }
 
 .hero__container {
@@ -43,7 +55,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -52,16 +64,16 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 18px;
+  padding: 6px 16px;
   border-radius: var(--border-radius-full);
-  border: 1px solid var(--color-green-brand);
+  border: 2px solid var(--color-green-accent);
   background-color: var(--color-green-light);
-  color: var(--color-green-brand);
+  color: var(--color-green-accent);
   font-size: 0.8rem;
   font-weight: 600;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 0.05em;
-  margin-bottom: 28px;
+  margin-bottom: 16px;
   opacity: 0;
   transform: translateY(20px);
 }
@@ -73,10 +85,10 @@
 .hero__title {
   font-family: var(--font-title);
   font-size: 4rem;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--color-text-primary);
   line-height: 1.15;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   text-transform: none;
   letter-spacing: -0.01em;
   opacity: 0;
@@ -87,8 +99,8 @@
   font-size: 1.05rem;
   color: var(--color-text-secondary);
   line-height: 1.7;
-  max-width: 720px;
-  margin-bottom: 40px;
+  /* max-width: 800px; */
+  margin-bottom: 48px;
   opacity: 0;
   transform: translateY(30px);
 }
@@ -99,8 +111,11 @@
 }
 
 .hero__cta-btn {
-  font-size: 0.95rem !important;
-  padding: 16px 36px !important;
+  font-size: 1.2rem !important;
+  padding: 12px 32px !important;
+  border-radius: var(--border-radius-md) !important;
+  background-color: var(--color-green-brand) !important;
+  border: none !important;
 }
 
 /* Responsividade */

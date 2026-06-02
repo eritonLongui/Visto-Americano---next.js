@@ -19,34 +19,43 @@ export default function Hero({ onOpenModal }: HeroProps) {
     // Sequência de animação GSAP de entrada
     const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
 
-    tl.to(badgeRef.current, {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      delay: 0.1
-    })
-    .to(titleRef.current, {
-      opacity: 1,
-      y: 0,
-      duration: 1.2
-    }, "-=0.7")
-    .to(descRef.current, {
-      opacity: 1,
-      y: 0,
-      duration: 1.2
-    }, "-=0.8")
-    .to(actionsRef.current, {
-      opacity: 1,
-      y: 0,
-      duration: 1.2
-    }, "-=0.9");
+    tl
+      .to(titleRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        delay: 0.1
+      })
+      .to(descRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 1
+      }, "-=0.7")
+      .to(actionsRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 1
+      }, "-=0.8")
+      .to(badgeRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 2,
+        delay: 0.8
+      }, "-=1.2");
   }, []);
 
   return (
     <section className="hero">
-      {/* Elementos Decorativos Abstratos Figma */}
-      <div className="hero__shape hero__shape--left" />
-      <div className="hero__shape hero__shape--right" />
+      <img
+        src="/logo metade.svg"
+        alt="Logo da Nostrali dividido ao meio"
+        className="hero__shape hero__shape--left"
+      />
+      <img
+        src="/logo metade.svg"
+        alt="Logo da Nostrali dividido ao meio"
+        className="hero__shape hero__shape--right"
+      />
 
       <div className="container hero__container">
         {/* Badge superior */}
@@ -67,7 +76,7 @@ export default function Hero({ onOpenModal }: HeroProps) {
 
         {/* Ação */}
         <div className="hero__actions" ref={actionsRef}>
-          <button 
+          <button
             className="button-premium button-premium--primary hero__cta-btn"
             onClick={onOpenModal}
           >
