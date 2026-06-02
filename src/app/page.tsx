@@ -55,28 +55,15 @@ export default function Home() {
 
   return (
     <>
-      {/* Cabeçalho */}
       <Header onOpenModal={openModal} />
-
-      {/* Conteúdo Principal */}
       <main>
-        {/* Hero Section */}
         <Hero onOpenModal={openModal} />
-
-        {/* Bloco de Apresentação da Parceria */}
         <Partnership />
-
-        {/* Seção com os vistos EB-1 e EB-2 NIW */}
         <VisaTypes onOpenModal={openModal} />
-
-        {/* Seção que explica o processo seletivo de atendimento */}
         <Process />
       </main>
-
-      {/* Rodapé */}
       <Footer />
 
-      {/* Modal do Formulário de Qualificação */}
       <QualificationModal isOpen={isModalOpen} onClose={closeModal} />
     </>
   );

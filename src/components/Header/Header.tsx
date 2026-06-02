@@ -31,13 +31,25 @@ export default function Header({ onOpenModal }: HeaderProps) {
     <header className="header">
       <div className="container header__container">
         {/* Logotipo Oficial da Parceria em Vetor */}
-        <a href="#" className="header__logo-link" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
-          <img 
-            src="/logo-partnership.svg" 
-            alt="Nostrali em parceria com Oceanik" 
-            className="header__logo-img"
-          />
-        </a>
+        <div className="header__logos">
+          <a
+            href="https://www.nostrali.com.br/"
+            className="header__logo-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+          >
+            <img 
+              src="/logo-partnership.svg" 
+              alt="Nostrali em parceria com Oceanik" 
+              className="header__logo-img"
+            />
+          </a>
+          <div>
+            <p className="header__subtitle">em parceria com</p>
+            <p className="header__title">OCEANIK</p>
+          </div>
+        </div>
 
         {/* Botão de Toggle Mobile */}
         <button 
@@ -104,7 +116,7 @@ export default function Header({ onOpenModal }: HeaderProps) {
               onOpenModal();
             }}
           >
-            Quero saber se me qualifico!
+            Fazer o teste
           </button>
         </nav>
       </div>

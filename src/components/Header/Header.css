@@ -15,6 +15,29 @@
   height: 100px;
 }
 
+.header__logos {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+}
+
+.header__title {
+  font-size: 1.8rem;
+  font-family: var(--font-title);
+  margin-left: 16px;
+  color: var(--color-text-light);
+}
+
+.header__subtitle {
+  font-size: 0.8rem;
+  font-family: var(--font-body);
+  color: var(--color-text-light);
+  transform: translateY(8px);
+  margin: 0;
+  padding: 0;
+}
+
 .header__logo-link {
   display: flex;
   align-items: center;
