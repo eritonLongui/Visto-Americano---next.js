@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Header.css";
 
 interface HeaderProps {
@@ -8,23 +8,7 @@ interface HeaderProps {
 }
 
 export default function Header({ onOpenModal }: HeaderProps) {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -33,30 +17,27 @@ export default function Header({ onOpenModal }: HeaderProps) {
   const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
     setIsMobileMenuOpen(false);
+    
     const element = document.getElementById(targetId);
     if (element) {
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
+      // Como o header está no fluxo (não fixo), rolamos direto para o elemento!
+      element.scrollIntoView({
         behavior: "smooth"
       });
     }
   };
 
   return (
-    <header className={`header ${isScrolled ? "header--scrolled" : ""}`}>
+    <header className="header">
       <div className="container header__container">
-        {/* Branding Dual */}
-        <div className="header__logo">
-          <div className="header__brand-nostrali">Nostrali</div>
-          <div className="header__brand-divider">
-            <span className="header__brand-partnership">em parceria com</span>
-          </div>
-          <div className="header__brand-oceanik">Oceanik</div>
-        </div>
+        {/* Logotipo Oficial da Parceria em Vetor */}
+        <a href="#" className="header__logo-link" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+          <img 
+            src="/logo-partnership.svg" 
+            alt="Nostrali em parceria com Oceanik" 
+            className="header__logo-img"
+          />
+        </a>
 
         {/* Botão de Toggle Mobile */}
         <button 
@@ -89,27 +70,27 @@ export default function Header({ onOpenModal }: HeaderProps) {
           <ul className="header__nav-list">
             <li>
               <a 
+                href="#requisitos" 
+                className="header__nav-link"
+                onClick={(e) => handleNavLinkClick(e, "requisitos")}
+              >
+                Requisitos
+              </a>
+            </li>
+            <li>
+              <a 
                 href="#parceria" 
                 className="header__nav-link"
                 onClick={(e) => handleNavLinkClick(e, "parceria")}
               >
-                Parceria
+                A Parceria
               </a>
             </li>
             <li>
               <a 
-                href="#vistos" 
+                href="#jornada" 
                 className="header__nav-link"
-                onClick={(e) => handleNavLinkClick(e, "vistos")}
-              >
-                Vistos de Elite
-              </a>
-            </li>
-            <li>
-              <a 
-                href="#processo" 
-                className="header__nav-link"
-                onClick={(e) => handleNavLinkClick(e, "processo")}
+                onClick={(e) => handleNavLinkClick(e, "jornada")}
               >
                 Como Funciona
               </a>
@@ -123,7 +104,7 @@ export default function Header({ onOpenModal }: HeaderProps) {
               onOpenModal();
             }}
           >
-            Iniciar Qualificação
+            Quero saber se me qualifico!
           </button>
         </nav>
       </div>

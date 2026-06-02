@@ -29,11 +29,11 @@
     "type": "select",
     "question": "Qual é o seu nível de escolaridade formal mais alto?",
     "options": [
-      { "label": "Doutorado / PhD", "value": "phd", "score": 10 },
-      { "label": "Mestrado", "value": "master", "score": 8 },
-      { "label": "Pós-graduação / MBA / Especialização", "value": "post_grad", "score": 5 },
-      { "label": "Bacharelado / Licenciatura", "value": "bachelor", "score": 4 },
-      { "label": "Tecnólogo / Ensino Médio", "value": "other", "score": 1 }
+      { "label": "Doutorado / PhD", "value": "phd", "disqualifying": false },
+      { "label": "Mestrado", "value": "master", "disqualifying": false },
+      { "label": "Pós-graduação / MBA / Especialização", "value": "post_grad", "disqualifying": false },
+      { "label": "Bacharelado / Licenciatura", "value": "bachelor", "disqualifying": false },
+      { "label": "Tecnólogo / Ensino Médio", "value": "other", "disqualifying": true }
     ],
     "required": true
   },
@@ -43,10 +43,10 @@
     "type": "select",
     "question": "Quantos anos de experiência profissional progressiva você possui na sua área?",
     "options": [
-      { "label": "Mais de 10 anos", "value": "10plus", "score": 10 },
-      { "label": "De 5 a 10 anos", "value": "5to10", "score": 7 },
-      { "label": "De 3 a 5 anos", "value": "3to5", "score": 4 },
-      { "label": "Menos de 3 anos", "value": "less3", "score": 1 }
+      { "label": "Mais de 10 anos", "value": "10plus", "disqualifying": false },
+      { "label": "De 5 a 10 anos", "value": "5to10", "disqualifying": false },
+      { "label": "De 3 a 5 anos", "value": "3to5", "disqualifying": false },
+      { "label": "Menos de 3 anos", "value": "less3", "disqualifying": true }
     ],
     "required": true
   },
@@ -56,15 +56,16 @@
     "type": "checkbox_group",
     "question": "Selecione as conquistas que você consegue comprovar documentalmente (marque todas que se aplicam):",
     "options": [
-      { "label": "Recebi prêmios de reconhecimento nacional ou internacional por excelência profissional.", "value": "awards", "score": 5 },
-      { "label": "Sou membro de associação profissional que exige realizações notáveis dos membros.", "value": "membership", "score": 3 },
-      { "label": "Tive artigos ou matérias publicadas sobre mim ou meu trabalho em veículos de grande circulação.", "value": "media", "score": 4 },
-      { "label": "Já atuei formalmente julgando ou avaliando o trabalho de outros profissionais da minha área.", "value": "judging", "score": 5 },
-      { "label": "Possuo artigos científicos publicados ou patentes registradas sob minha autoria.", "value": "scholarly", "score": 5 },
-      { "label": "Desempenhei papel de liderança ou função crítica em empresas de grande prestígio ou relevância.", "value": "critical_role", "score": 4 },
-      { "label": "Recebo ou recebi remuneração significativamente acima da média do mercado na minha profissão.", "value": "high_salary", "score": 3 }
+      { "label": "Recebi prêmios de reconhecimento nacional ou internacional por excelência profissional.", "value": "awards", "disqualifying": false },
+      { "label": "Sou membro de associação profissional que exige realizações notáveis dos membros.", "value": "membership", "disqualifying": false },
+      { "label": "Tive artigos ou matérias publicadas sobre mim ou meu trabalho em veículos de grande circulação.", "value": "media", "disqualifying": false },
+      { "label": "Já atuei formalmente julgando ou avaliando o trabalho de outros profissionais da minha área.", "value": "judging", "disqualifying": false },
+      { "label": "Possuo artigos científicos publicados ou patentes registradas sob minha autoria.", "value": "scholarly", "disqualifying": false },
+      { "label": "Desempenhei papel de liderança ou função crítica em empresas de grande prestígio ou relevância.", "value": "critical_role", "disqualifying": false },
+      { "label": "Recebo ou recebi remuneração significativamente acima da média do mercado na minha profissão.", "value": "high_salary", "disqualifying": false },
+      { "label": "Não possuo nenhuma das conquistas citadas acima no momento.", "value": "none", "disqualifying": true }
     ],
-    "required": false
+    "required": true
   },
   {
     "id": "us_plans",
@@ -72,8 +73,8 @@
     "type": "radio",
     "question": "Você pretende continuar atuando na mesma área de especialidade nos Estados Unidos?",
     "options": [
-      { "label": "Sim, com absoluta certeza.", "value": "yes", "score": 5, "critical": true },
-      { "label": "Não, pretendo mudar de área ou aposentar-me.", "value": "no", "score": -20, "critical": false }
+      { "label": "Sim, com absoluta certeza.", "value": "yes", "disqualifying": false },
+      { "label": "Não, pretendo mudar de área ou aposentar-me.", "value": "no", "disqualifying": true }
     ],
     "required": true
   }

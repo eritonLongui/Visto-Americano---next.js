@@ -1,27 +1,34 @@
-/* Sistema de Design e Variáveis do Projeto (Padrão BEM) */
+/* Novo Sistema de Design e Variáveis do Projeto (Fase 2) */
 
 :root {
-  /* Cores de Fundo (Escuros/Pretos) */
-  --color-bg-primary: #14171A;
-  --color-bg-secondary: #1F2328;
-  --color-bg-tertiary: #23272D;
-  --color-bg-accent: #2C3036;
+  /* Cores de Fundo (Claros/Creme) */
+  --color-bg-primary: #FFFDF8;
+  --color-bg-secondary: #FFF9ED;
+  --color-bg-accent: #EBE7DC;
+  --color-bg-border: #CCC7C1;
 
-  /* Azuis (Confiança e Autoridade) */
-  --color-blue-dark: #002F4C;
-  --color-blue-brand: #00629E;
-  --color-blue-light: #e6f0fa;
+  /* Cores de Fundo (Escuros para Header/Footer) */
+  --color-bg-dark: #1F1F1F;
+  --color-bg-dark-secondary: #121212;
+  --color-bg-dark-accent: #333333;
 
-  /* Vermelhos (Destaque e CTA) */
-  --color-red-brand: #8C1C29;
-  --color-red-active: #BB0016;
+  /* Cores de Texto */
+  --color-text-primary: #222222;
+  --color-text-secondary: #555555;
+  --color-text-muted: #888888;
+  --color-text-light: #FFFDF8;
+  --color-text-light-muted: #CCC7C1;
 
-  /* Claros (Legibilidade e Sofisticação) */
-  --color-text-primary: #E2E6E9;
-  --color-text-secondary: #a0aab5;
-  --color-text-muted: #6e7985;
-  --color-light-warm: #F7F4EE;
-  
+  /* Destaques (Verdes/Petróleo) */
+  --color-green-brand: #1B4F43;
+  --color-green-accent: #007867;
+  --color-green-light: rgba(27, 79, 67, 0.08);
+
+  /* Destaques (Vermelhos/CTAs) */
+  --color-red-brand: #7F2121;
+  --color-red-accent: #9D2829;
+  --color-red-light: rgba(127, 33, 33, 0.08);
+
   /* Fontes (Conforme tipografia.png e PDA) */
   --font-title: 'Kameron', Georgia, serif;
   --font-body: 'Kufam', system-ui, -apple-system, sans-serif;

@@ -1,40 +1,34 @@
-/* Estilos do Componente Partnership - Padrão BEM */
+/* Novo Estilo do Componente Partnership - Padrão BEM (Fase 2) */
 
 .partnership {
-  padding: 120px 0;
-  background-color: var(--color-light-warm);
-  color: var(--color-bg-primary);
-  position: relative;
+  /* Os comportamentos de sticky (partnership-sticky) são controlados globalmente */
+  width: 100%;
+  padding: 100px 0;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+}
+
+.partnership__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
 }
 
 .partnership__header {
   text-align: center;
-  max-width: 700px;
-  margin: 0 auto 80px;
-}
-
-.partnership__subtitle {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--color-red-brand);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 16px;
-  display: block;
+  max-width: 800px;
+  margin: 0 auto 60px;
 }
 
 .partnership__title {
+  font-family: var(--font-title);
   font-size: 2.5rem;
-  color: var(--color-bg-primary);
-  margin-bottom: 24px;
-  text-transform: uppercase;
-}
-
-.partnership__description {
-  font-size: 1.1rem;
-  color: var(--color-bg-accent);
-  line-height: 1.6;
+  color: var(--color-text-primary);
+  line-height: 1.25;
+  text-transform: none;
 }
 
 .partnership__grid {
@@ -44,23 +38,23 @@
 }
 
 .partnership__card {
-  background-color: #ffffff;
-  border-radius: var(--border-radius-md);
-  padding: 50px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+  background-color: var(--color-bg-primary);
+  border: 1px solid rgba(204, 199, 193, 0.4);
+  border-radius: var(--border-radius-lg);
+  padding: 48px;
   position: relative;
   overflow: hidden;
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
   display: flex;
   flex-direction: column;
+  transition: all var(--transition-normal);
 }
 
 .partnership__card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
 }
 
-/* Bordas superiores temáticas conforme referência.png */
+/* Bordas coloridas figma */
 .partnership__card--nostrali::before {
   content: '';
   position: absolute;
@@ -78,86 +72,46 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(to right, #002F4C, #00629E); /* Degradê Oceanik */
+  background-color: var(--color-red-brand);
 }
 
-.partnership__card-logo {
+.partnership__card-title {
+  font-size: 1.6rem;
   font-family: var(--font-title);
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 32px;
-  color: var(--color-bg-primary);
-}
-
-.partnership__card-logo--nostrali {
-  color: var(--color-bg-primary);
-}
-
-.partnership__card-logo--oceanik {
-  color: var(--color-blue-dark);
+  margin-bottom: 24px;
+  color: var(--color-text-primary);
 }
 
 .partnership__card-text {
-  font-size: 1rem;
-  color: var(--color-bg-accent);
+  font-size: 0.98rem;
+  color: var(--color-text-secondary);
   line-height: 1.7;
-  margin-bottom: 24px;
-}
-
-.partnership__highlight-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.partnership__highlight-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 0.95rem;
-  color: var(--color-bg-primary);
-  font-weight: 500;
-}
-
-.partnership__highlight-icon {
-  color: var(--color-blue-brand);
-  flex-shrink: 0;
-  margin-top: 3px;
-}
-
-.partnership__card--nostrali .partnership__highlight-icon {
-  color: #008C45;
 }
 
 /* Responsividade */
 @media (max-width: 991px) {
-  .partnership__grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  
-  .partnership__card {
-    padding: 40px;
-  }
-}
-
-@media (max-width: 767px) {
   .partnership {
+    height: auto !important; /* Desliga o fullscreen sticky no mobile para rolar livremente */
+    position: relative !important;
     padding: 80px 0;
   }
-
+  
   .partnership__title {
     font-size: 2rem;
   }
 
-  .partnership__description {
-    font-size: 1rem;
+  .partnership__grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
-  
+
   .partnership__card {
-    padding: 30px;
+    padding: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .partnership__title {
+    font-size: 1.6rem;
   }
 }

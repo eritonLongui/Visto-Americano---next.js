@@ -1,60 +1,39 @@
-/* Estilos do Componente Hero - Padrão BEM */
+/* Novo Estilo do Componente Hero - Padrão BEM (Fase 2) */
 
 .hero {
   position: relative;
-  min-height: 100vh;
+  height: calc(100vh - 100px); /* Ocupa a tela inteira descontando o header */
+  min-height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--color-bg-primary);
-  padding-top: 100px;
   overflow: hidden;
 }
 
-/* Fundo Atmosférico com Padrão Abstrato Premium */
-.hero__background {
+/* Formas Orgânicas Laterais do Figma (hero.png) */
+.hero__shape {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  width: 40vw;
+  height: 90vh;
+  background-color: var(--color-bg-secondary);
+  opacity: 0.8;
+  pointer-events: none;
   z-index: 1;
 }
 
-/* Gradientes profundos de cor de marca (azul e escuros) */
-.hero__glow-1 {
-  position: absolute;
-  top: -10%;
-  right: -10%;
-  width: 60%;
-  height: 60%;
-  background: radial-gradient(circle, rgba(0, 47, 76, 0.25) 0%, rgba(20, 23, 26, 0) 70%);
-  filter: blur(80px);
-  pointer-events: none;
+.hero__shape--left {
+  top: 5vh;
+  left: -20vw;
+  border-radius: 0 500px 500px 0;
+  border-right: 1px solid rgba(204, 199, 193, 0.2);
 }
 
-.hero__glow-2 {
-  position: absolute;
-  bottom: -10%;
-  left: -10%;
-  width: 50%;
-  height: 50%;
-  background: radial-gradient(circle, rgba(140, 28, 41, 0.08) 0%, rgba(20, 23, 26, 0) 70%);
-  filter: blur(80px);
-  pointer-events: none;
-}
-
-/* Brasão de fundo elegante (SVG estilizado sutil) */
-.hero__crest-svg {
-  position: absolute;
-  right: 5%;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 45%;
-  height: auto;
-  opacity: 0.03;
-  color: var(--color-light-warm);
-  pointer-events: none;
+.hero__shape--right {
+  bottom: 5vh;
+  right: -20vw;
+  border-radius: 500px 0 0 500px;
+  border-left: 1px solid rgba(204, 199, 193, 0.2);
 }
 
 .hero__container {
@@ -64,103 +43,95 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.hero__badge {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--color-red-brand);
-  border: 1px solid rgba(140, 28, 41, 0.4);
-  background-color: rgba(140, 28, 41, 0.06);
-  padding: 6px 16px;
+/* Badge Cronômetro Verde */
+.hero__badge-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
   border-radius: var(--border-radius-full);
-  margin-bottom: 24px;
+  border: 1px solid var(--color-green-brand);
+  background-color: var(--color-green-light);
+  color: var(--color-green-brand);
+  font-size: 0.8rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  display: inline-block;
+  letter-spacing: 0.05em;
+  margin-bottom: 28px;
   opacity: 0;
   transform: translateY(20px);
 }
 
+.hero__badge-icon {
+  flex-shrink: 0;
+}
+
 .hero__title {
-  font-size: 3.5rem;
+  font-family: var(--font-title);
+  font-size: 4rem;
   font-weight: 700;
-  max-width: 900px;
-  margin-bottom: 24px;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
+  color: var(--color-text-primary);
   line-height: 1.15;
-  color: var(--color-light-warm);
+  margin-bottom: 24px;
+  text-transform: none;
+  letter-spacing: -0.01em;
   opacity: 0;
   transform: translateY(30px);
 }
 
-.hero__title span {
-  display: block;
-  font-size: 1.5rem;
-  font-family: var(--font-body);
-  color: var(--color-text-secondary);
-  font-weight: 400;
-  margin-top: 16px;
-  text-transform: none;
-  letter-spacing: 0;
-}
-
 .hero__description {
-  font-size: 1.15rem;
-  max-width: 650px;
+  font-size: 1.05rem;
   color: var(--color-text-secondary);
-  margin-bottom: 48px;
-  line-height: 1.6;
+  line-height: 1.7;
+  max-width: 720px;
+  margin-bottom: 40px;
   opacity: 0;
   transform: translateY(30px);
 }
 
 .hero__actions {
-  display: flex;
-  gap: 20px;
   opacity: 0;
   transform: translateY(30px);
 }
 
+.hero__cta-btn {
+  font-size: 0.95rem !important;
+  padding: 16px 36px !important;
+}
+
 /* Responsividade */
 @media (max-width: 991px) {
+  .hero {
+    height: auto;
+    padding: 80px 0;
+  }
+
   .hero__title {
     font-size: 2.8rem;
   }
-  
-  .hero__title span {
-    font-size: 1.25rem;
+
+  .hero__shape {
+    display: none; /* Simplifica no mobile */
   }
 }
 
 @media (max-width: 767px) {
-  .hero {
-    min-height: 90vh;
-    padding-top: 120px;
-  }
-
   .hero__title {
     font-size: 2.2rem;
+    line-height: 1.25;
   }
   
   .hero__description {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    margin-bottom: 30px;
   }
 
-  .hero__actions {
-    flex-direction: column;
+  .hero__cta-btn {
     width: 100%;
-    gap: 12px;
-  }
-
-  .hero__actions .button-premium {
-    width: 100%;
-  }
-
-  .hero__crest-svg {
-    width: 80%;
-    right: -10%;
-    top: 60%;
+    padding: 14px 28px !important;
   }
 }

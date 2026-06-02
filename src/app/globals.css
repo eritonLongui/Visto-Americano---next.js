@@ -34,7 +34,7 @@ body {
 /* Tipografia Base */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-title);
-  color: var(--color-light-warm);
+  color: var(--color-text-primary);
   font-weight: 700;
   line-height: 1.25;
 }
@@ -72,10 +72,9 @@ button {
   align-items: center;
   justify-content: center;
   padding: 14px 28px;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  letter-spacing: 0.03em;
   border-radius: var(--border-radius-sm);
   transition: all var(--transition-normal);
   position: relative;
@@ -83,32 +82,52 @@ button {
   cursor: pointer;
 }
 
+/* Botão Vermelho/Vinho */
 .button-premium--primary {
   background-color: var(--color-red-brand);
-  color: var(--color-light-warm);
+  color: var(--color-text-light);
   border: 1px solid var(--color-red-brand);
 }
 
 .button-premium--primary:hover {
-  background-color: var(--color-red-active);
-  border-color: var(--color-red-active);
+  background-color: var(--color-red-accent);
+  border-color: var(--color-red-accent);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(187, 0, 22, 0.25);
+  box-shadow: 0 8px 24px rgba(127, 33, 33, 0.2);
 }
 
 .button-premium--primary:active {
   transform: translateY(0);
 }
 
+/* Botão Verde Petróleo */
+.button-premium--green {
+  background-color: var(--color-green-brand);
+  color: var(--color-text-light);
+  border: 1px solid var(--color-green-brand);
+}
+
+.button-premium--green:hover {
+  background-color: var(--color-green-accent);
+  border-color: var(--color-green-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(27, 79, 71, 0.2);
+}
+
+.button-premium--green:active {
+  transform: translateY(0);
+}
+
+/* Botão Secundário */
 .button-premium--secondary {
   background-color: transparent;
-  color: var(--color-light-warm);
+  color: var(--color-text-primary);
   border: 1px solid var(--color-bg-accent);
 }
 
 .button-premium--secondary:hover {
   background-color: var(--color-bg-secondary);
-  border-color: var(--color-text-secondary);
+  border-color: var(--color-bg-border);
   transform: translateY(-2px);
 }
 
@@ -116,16 +135,62 @@ button {
   transform: translateY(0);
 }
 
+/* Seções de 100vh */
+.section-fullscreen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
 /* Efeito de Backdrop Glass */
 .glass-effect {
-  background: rgba(31, 35, 40, 0.7);
+  background: rgba(255, 253, 248, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(44, 48, 54, 0.5);
+  border: 1px solid rgba(204, 199, 193, 0.3);
 }
 
 /* Animações e Transições Globais */
 .reveal-on-scroll {
   opacity: 0;
   transform: translateY(30px);
+}
+
+/* Estrutura para Efeito de Sobreposição (Sticky Overlay) */
+.sticky-wrapper {
+  position: relative;
+  background-color: var(--color-bg-primary);
+}
+
+/* A seção 2 fica fixa quando chega no topo */
+.partnership-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* A seção 3 surge cobrindo a seção 2 */
+.process-overlay {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  background-color: #FFFDF8 !important; /* Força fundo da seção 3 */
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* A seção 4 surge cobrindo a seção 3 */
+.cta-overlay {
+  position: relative;
+  z-index: 3;
+  min-height: 100vh;
+  background-color: #FFF9ED !important; /* Força fundo da seção 4 */
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.05);
 }

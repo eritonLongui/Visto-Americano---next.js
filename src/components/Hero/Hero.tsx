@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
+import { Clock } from "lucide-react";
 import gsap from "gsap";
 import "./Hero.css";
 
@@ -15,14 +16,14 @@ export default function Hero({ onOpenModal }: HeroProps) {
   const actionsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Sequência de animação GSAP premium de entrada
+    // Sequência de animação GSAP de entrada
     const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
 
     tl.to(badgeRef.current, {
       opacity: 1,
       y: 0,
       duration: 1,
-      delay: 0.2
+      delay: 0.1
     })
     .to(titleRef.current, {
       opacity: 1,
@@ -41,74 +42,36 @@ export default function Hero({ onOpenModal }: HeroProps) {
     }, "-=0.9");
   }, []);
 
-  const handleLearnMoreClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    const partnershipSection = document.getElementById("parceria");
-    if (partnershipSection) {
-      const headerOffset = 80;
-      const elementPosition = partnershipSection.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-    }
-  };
-
   return (
     <section className="hero">
-      {/* Elementos Atmosféricos */}
-      <div className="hero__background">
-        <div className="hero__glow-1" />
-        <div className="hero__glow-2" />
-        
-        {/* Brasão SVG sutil e elegante */}
-        <svg 
-          className="hero__crest-svg" 
-          viewBox="0 0 100 100" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="0.5"
-        >
-          {/* Fleur-de-lis elegante estilizada */}
-          <path d="M50,15 C50,25 45,35 38,42 C44,42 47,38 50,33 C53,38 56,42 62,42 C55,35 50,25 50,15 Z" />
-          <path d="M50,45 C50,55 42,65 32,70 C40,68 45,63 48,56 C41,56 34,50 30,42 C38,42 45,46 48,52 C48,42 50,35 50,35 C50,35 52,42 52,52 C55,46 62,42 70,42 C66,50 59,56 52,56 C55,63 60,68 68,70 C58,65 50,55 50,45 Z" />
-          <path d="M25,75 Q50,70 75,75" />
-          <path d="M50,75 L50,90" />
-        </svg>
-      </div>
+      {/* Elementos Decorativos Abstratos Figma */}
+      <div className="hero__shape hero__shape--left" />
+      <div className="hero__shape hero__shape--right" />
 
       <div className="container hero__container">
-        {/* Badge seletivo */}
-        <div className="hero__badge" ref={badgeRef}>
-          Clube Privado & Assessoria Reservada
+        {/* Badge superior */}
+        <div className="hero__badge-box" ref={badgeRef}>
+          <Clock size={14} className="hero__badge-icon" />
+          <span>Teste de perfil em menos de 2 minutos</span>
         </div>
 
-        {/* Título Principal */}
+        {/* Título Principal Figma */}
         <h1 className="hero__title" ref={titleRef}>
-          Realize o sonho do seu visto americano.
-          <span>Atendimento exclusivo para casos específicos de visto de elite, com análise prévia de elegibilidade.</span>
+          Conquiste seu visto americano com mais tranquilidade
         </h1>
 
-        {/* Descrição Sóbria */}
+        {/* Descrição Figma */}
         <p className="hero__description" ref={descRef}>
-          Nostrali e Oceanik unem-se em uma operação de alta curadoria técnica para orientar os profissionais de maior relevância do mercado na obtenção de residência permanente nos Estados Unidos.
+          Faça a análise de perfil e descubra se os vistos EB-1 ou EB-2 são a melhor escolha para o seu sonho de morar nos Estados Unidos e ter o Green Card. Voltados para profissionais de alto desempenho, são as categorias mais valorizadas de visto para imigração.
         </p>
 
-        {/* Ações */}
+        {/* Ação */}
         <div className="hero__actions" ref={actionsRef}>
           <button 
-            className="button-premium button-premium--primary"
+            className="button-premium button-premium--primary hero__cta-btn"
             onClick={onOpenModal}
           >
-            Iniciar Qualificação
-          </button>
-          <button 
-            className="button-premium button-premium--secondary"
-            onClick={handleLearnMoreClick}
-          >
-            Entenda o Processo
+            Quero saber se me qualifico!
           </button>
         </div>
       </div>
