@@ -4,7 +4,7 @@
   /* Os comportamentos de sticky (partnership-sticky) são controlados globalmente */
   width: 100%;
   padding: 100px 0;
-  background-color: var(--color-bg-secondary);
+  background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
   display: flex;
   align-items: center;
