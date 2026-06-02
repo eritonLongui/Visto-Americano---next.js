@@ -23,7 +23,7 @@
 }
 
 .header__title {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-family: var(--font-title);
   margin-left: 16px;
   color: var(--color-text-light);
