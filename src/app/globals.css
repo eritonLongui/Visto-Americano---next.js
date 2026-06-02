@@ -1,5 +1,5 @@
-/* Importação de Fontes Premium do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Kameron:wght@400;700&family=Kufam:ital,wght@0,400..900;1,400..900&display=swap');
+/* Importação de Fontes */
+/* @import url('https://fonts.googleapis.com/css2?family=Kameron:wght@400;700&family=Kufam:ital,wght@0,400..900;1,400..900&display=swap'); */
 
 /* Importação das Variáveis de Design */
 @import '../styles/variables.css';
@@ -162,7 +162,7 @@ button {
 /* Estrutura para Efeito de Sobreposição (Sticky Overlay) */
 .sticky-wrapper {
   position: relative;
-  background-color: var(--color-bg-primary);
+  min-height: 280vh
 }
 
 /* A seção 2 fica fixa quando chega no topo */
@@ -171,7 +171,7 @@ button {
   top: 0;
   z-index: 1;
   height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
   display: flex;
   align-items: center;
   justify-content: center;

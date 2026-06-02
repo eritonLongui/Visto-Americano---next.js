@@ -58,9 +58,11 @@ export default function Home() {
       <Header onOpenModal={openModal} />
       <main>
         <Hero onOpenModal={openModal} />
-        <VisaTypes onOpenModal={openModal} />
-        <Partnership />
-        <Process />
+        <section className="sticky-wrapper">
+          <VisaTypes onOpenModal={openModal} />
+          <Partnership />
+          <Process />
+        </section>
         {/* Seção CTA */}
       </main>
       <Footer />
