@@ -4,10 +4,10 @@
   /* Os comportamentos de overlay (process-overlay) são controlados globalmente */
   width: 100%;
   padding: 120px 0;
-  background-color: var(--color-bg-primary); /* Fundo #FFFDF8 */
+  background-color: var(--color-bg-secondary);
   color: var(--color-text-primary);
   display: flex;
-  align-items: center;
+  align-items: start;
 }
 
 .process__container {
@@ -18,35 +18,25 @@
 
 .process__header {
   text-align: center;
-  max-width: 800px;
-  margin: 0 auto 80px;
+  margin: 0 auto 128px;
 }
 
 .process__title {
   font-family: var(--font-title);
-  font-size: 2.8rem;
+  font-size: 2.4rem;
+  font-weight: 500;
   color: var(--color-text-primary);
-  line-height: 1.25;
+  margin-bottom: 12px;
   text-transform: none;
+  letter-spacing: -0.01em;
 }
 
 .process__grid {
+  max-width: var(--max-width-container);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 40px;
-  position: relative;
-}
-
-/* Conectores finos entre as etapas */
-.process__grid::before {
-  content: '';
-  position: absolute;
-  top: 50px;
-  left: 15%;
-  right: 15%;
-  height: 1px;
-  background-color: var(--color-bg-border);
-  z-index: 1;
+  gap: 10vw;
+  margin: 0 auto;
 }
 
 .process__step {
@@ -54,18 +44,14 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  position: relative;
   z-index: 2;
-  background-color: var(--color-bg-primary);
-  padding: 0 20px;
 }
 
 .process__step-badge {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: var(--border-radius-full);
-  background-color: var(--color-bg-secondary);
-  border: 1px solid var(--color-bg-border);
+  background-color: var(--color-bg-accent);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,29 +61,34 @@
 
 .process__step-number {
   font-family: var(--font-title);
-  font-size: 2.2rem;
+  font-size: 3rem;
   font-weight: 700;
-  color: var(--color-red-brand);
-}
-
-.process__step:hover .process__step-badge {
-  border-color: var(--color-green-brand);
-  background-color: var(--color-green-light);
-  transform: scale(1.05);
+  color: var(--color-green-brand);
 }
 
 .process__step-title {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--color-text-primary);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-green-brand);
   margin-bottom: 18px;
 }
 
 .process__step-text {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: var(--color-text-secondary);
   line-height: 1.7;
-  max-width: 280px;
+  max-width: 20vw;
+}
+
+.process__divider {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-red-accent);
+  height: 2px;
+  width: 80%;
+  box-shadow: 0 8px 20px rgba(161, 24, 26, 0.2);
 }
 
 /* Responsividade */

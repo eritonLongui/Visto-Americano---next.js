@@ -40,6 +40,8 @@ export default function Process() {
             </div>
           ))}
         </div>
+
+        <div className="process__divider"></div>
       </div>
     </section>
   );
