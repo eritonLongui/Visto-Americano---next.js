@@ -5,6 +5,17 @@ export default function Partnership() {
   return (
     <section className="partnership partnership-sticky" id="parceria">
       <div className="partnership__divider"></div>
+      <img
+        src="/mapa europa.svg"
+        alt="mapa da europa estilizado"
+        className="partnership__shape partnership__shape--left"
+      />
+      <img
+        src="/mapa america.svg"
+        alt="mapa da america estilizado"
+        className="partnership__shape partnership__shape--right"
+      />
+
       <div className="container partnership__container">
         {/* Cabeçalho */}
         <div className="partnership__header reveal-on-scroll">
