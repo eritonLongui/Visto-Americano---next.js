@@ -30,9 +30,9 @@
   --color-red-accent: #9D2829;
   --color-red-light: rgba(127, 33, 33, 0.08);
 
-  /* Fontes (Conforme tipografia.png e PDA) */
-  --font-title: 'DM Serif Display', Georgia, serif;
-  --font-body: 'Cairo', system-ui, -apple-system, sans-serif;
+  /* Fontes (inclusas no layout.tsx) */
+  /* --font-title: 'DM Serif Display', Georgia, serif;
+  --font-body: 'Cairo', system-ui, -apple-system, sans-serif; */
 
   /* Efeitos e Espaçamentos */
   --border-radius-sm: 8px;

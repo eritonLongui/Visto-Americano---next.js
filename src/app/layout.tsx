@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Cairo, DM_Serif_Display } from 'next/font/google';
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -14,6 +15,17 @@ export const metadata: Metadata = {
   }
 };
 
+export const cairo = Cairo({
+  subsets: ['latin'],
+  variable: '--font-body',
+});
+
+export const dmSerif = DM_Serif_Display({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-title',
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -21,22 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <head>
-        <link
-          rel="preconnect"
-          href="https://fonts.googleapis.com"
-        />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin=""
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=DM+Serif+Display:ital@0;1&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body>
+      <body className={`${cairo.variable} ${dmSerif.variable}`}>
         {children}
       </body>
     </html>
