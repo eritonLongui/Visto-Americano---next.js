@@ -139,13 +139,14 @@
 
 .visa-types__footer-text {
   font-family: var(--font-title);
-  font-size: 1.05rem;
+  font-size: 1.25rem;
   font-weight: 500;
-  color: var(--color-green-brand);
+  letter-spacing: 0.05rem;
+  color: var(--color-text-primary);
 }
 
 .visa-types__footer-btn {
-  font-size: 1.1rem !important;
+  font-size: 1.25rem !important;
   padding: 6px 24px !important;
 }
 
