@@ -15,7 +15,7 @@ html,
 body {
   max-width: 100vw;
   min-height: 100vh;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
   font-family: var(--font-body);
@@ -161,15 +161,29 @@ button {
 
 /* Estrutura para Efeito de Sobreposição (Sticky Overlay) */
 .sticky-wrapper {
-  position: relative;
-  min-height: 280vh
+  /* position: relative; */
+  height: 100vh
+}
+
+.stick-content {
+  position: sticky;
+  top: 0;
+  height: 100vh;
 }
 
 /* A seção 2 fica fixa quando chega no topo */
+.visa-types-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: 1;
+}
+
+/* A seção 3 fica fixa quando chega no topo */
 .partnership-sticky {
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 2;
   height: 100vh;
   /* overflow: hidden; */
   display: flex;
@@ -180,17 +194,7 @@ button {
 /* A seção 3 surge cobrindo a seção 2 */
 .process-overlay {
   position: relative;
-  z-index: 2;
-  min-height: 100vh;
-  background-color: #FFFDF8 !important; /* Força fundo da seção 3 */
-  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.05);
-}
-
-/* A seção 4 surge cobrindo a seção 3 */
-.cta-overlay {
-  position: relative;
   z-index: 3;
   min-height: 100vh;
-  background-color: #FFF9ED !important; /* Força fundo da seção 4 */
   box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.05);
 }

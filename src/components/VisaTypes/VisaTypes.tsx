@@ -9,7 +9,7 @@ interface VisaTypesProps {
 
 export default function VisaTypes({ onOpenModal }: VisaTypesProps) {
   return (
-    <section className="visa-types" id="requisitos">
+    <section className="visa-types visa-types-sticky" id="requisitos">
       <img
         src="/logo metade.svg"
         alt="Logo da Nostrali dividido ao meio"
