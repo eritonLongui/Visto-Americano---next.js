@@ -60,7 +60,7 @@ export default function Home() {
       <main>
         <Hero onOpenModal={openModal} />
         <VisaTypes onOpenModal={openModal} />
-        <Partnership />
+        <Partnership onOpenModal={openModal} />
         <Process />
         <CtaSection onOpenModal={openModal} />
       </main>

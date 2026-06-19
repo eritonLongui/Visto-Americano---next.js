@@ -1,7 +1,20 @@
 import React from "react";
 import "./Partnership.css";
 
-export default function Partnership() {
+interface PartnershipProps {
+  onOpenModal: () => void;
+}
+
+const benefits = [
+  "Concedem residência permanente legal (green card)",
+  "Não exigem patrocinador ou oferta de trabalho",
+  "Não é necessário fluência em inglês",
+  "Inclusão de cônjuge e filhos menores de 21 anos",
+  "Não necessita de investimento financeiro mínimo no país",
+  "Possibilidade de taxa preferencial para análise em 15 dias",
+];
+
+export default function Partnership({ onOpenModal }: PartnershipProps) {
   return (
     <section className="partnership partnership-sticky" id="parceria">
       <div className="partnership__divider"></div>
@@ -16,49 +29,50 @@ export default function Partnership() {
         className="partnership__shape partnership__shape--right"
       />
 
+      <img
+        src="/estatua-da-liberdade.png"
+        alt="Foto da estatua da liberdade"
+        className="partnership__shape partnership__shape--liberty"
+      />
+
       <div className="container partnership__container">
         {/* Cabeçalho */}
         <div className="partnership__header reveal-on-scroll">
           <h2 className="partnership__title">
-            Empresas que são referência
+            Os melhores vistos para morar nos Estados Unidos
           </h2>
-          <p className="partnership__description">
-            Unidas para te assessorar no <span className="partnership__description--highlight">sonho americano</span>.
-          </p>
         </div>
 
-        {/* Grid de Parceria */}
-        <div className="partnership__grid">
-          {/* Card Nostrali */}
-          <div className="partnership__card partnership__card--nostrali reveal-on-scroll">
-            <img
-              src="/logo-nostrali-card.svg"
-              alt="Logo da Nostrali Cidadania Italiana"
-              className="partnership__card-logo"
-            />
-            <p className="partnership__card-text">
-              Nostrali em italiano significa <em>"originário da nossa terra"</em>, <em>"nosso"</em>. Com escritórios no Brasil e na Itália, a Nostrali Cidadania Italiana orienta e assessora cidadãos italianos e seus descendentes em procedimentos administrativos e jurídicos para o reconhecimento da cidadania italiana.
-            </p>
-            <p className="partnership__card-text">
-              Mais de 30 mil descendentes já confiaram na Nostrali para se conectarem às raízes.
-            </p>
-          </div>
+        {/* Cards de Benefícios */}
+        <div className="partnership__benefits reveal-on-scroll">
+          {benefits.map((item, index) => (
+            <div key={index} className="partnership__benefit">
+              <div>
+                <img
+                  src="/icon-topic.svg"
+                  alt="Ícone de diamante"
+                  className="partnership__benefit-icon"
+                />
+                <span className="partnership__benefit-text">
+                  {item}
+                </span>
+              </div>
 
-          {/* Card Oceanik */}
-          <div className="partnership__card partnership__card--oceanik reveal-on-scroll">
-            <img
-              src="/logo-oceanik-card.svg"
-              alt="Logo da Oceanik Group"
-              className="partnership__card-logo"
-            />
-            <p className="partnership__card-text">
-              Empresa internacional de mobilidade dedicada a atender clientes interessados em se mudar e fazer negócios nos EUA e em todo o mundo.
-            </p>
-            <p className="partnership__card-text">
-              Conta com uma equipe de profissionais com mais de 20 anos de experiência no mercado.
-            </p>
-          </div>
+              <div>
+                <span className="partnership__benefit-line"></span>
+                <img className="partnership__benefit-logo" src="/logo-red.svg" alt="Logo da Nostrali" />
+              </div>
+            </div>
+          ))}
         </div>
+
+        {/* Rodapé seção com botão vermelho */}
+        <button
+          className="button-premium partnership__footer-btn reveal-on-scroll"
+          onClick={onOpenModal}
+        >
+          Quero saber se posso aplicar
+        </button>
       </div>
     </section>
   );
