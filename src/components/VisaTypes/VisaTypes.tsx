@@ -28,13 +28,13 @@ export default function VisaTypes({ onOpenModal }: VisaTypesProps) {
           {/* Card EB-1 */}
           <div className="visa-types__card reveal-on-scroll">
             <div className="visa-types__card-header">
-              <h3 className="visa-types__card-name visa-types__card-name--eb1">EB-1</h3>
-              <span className="visa-types__card-badge visa-types__card-badge--eb1">
+              <h3 className="visa-types__card-name visa-types__card-name--eb2">EB-1</h3>
+              <span className="visa-types__card-badge visa-types__card-badge--eb2">
                 Habilidade Extraordinária
               </span>
             </div>
             <p className="visa-types__card-description">
-              Profissionais que se destacam em suas áreas de atuação, dos executivos aos pesquisadores e acadêmicos.
+              Profissionais que se destacam em suas áreas de atuação, dos executivos aos pesquisadores e acadêmicos: médicos, engenheiros, arquitetos, artistas e muito mais.
             </p>
             <p className="visa-types__card-description">
               Exige reconhecimento e premiações, artigos publicados, papel de liderança, entre outros.
@@ -44,8 +44,8 @@ export default function VisaTypes({ onOpenModal }: VisaTypesProps) {
           {/* Card EB-2 */}
           <div className="visa-types__card reveal-on-scroll">
             <div className="visa-types__card-header">
-              <h3 className="visa-types__card-name visa-types__card-name--eb1">EB-2</h3>
-              <span className="visa-types__card-badge visa-types__card-badge--eb1">
+              <h3 className="visa-types__card-name visa-types__card-name--eb2">EB-2</h3>
+              <span className="visa-types__card-badge visa-types__card-badge--eb2">
                 Isenção de Interesse National
               </span>
               {/* <h3 className="visa-types__card-name visa-types__card-name--eb2">EB-2</h3>
