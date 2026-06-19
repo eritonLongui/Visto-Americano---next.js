@@ -6,6 +6,11 @@ export default function About() {
     return (
         <section className="about-section">
             <img
+                src="/bandeira-pendurada.png"
+                alt="Bandeira dos Estados Unidos pendurada"
+                className="about-section__flag"
+            />
+            <img
                 src="/logo metade.svg"
                 alt="Logo da Nostrali dividido ao meio"
                 className="about-section__shape"

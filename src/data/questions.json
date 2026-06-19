@@ -1,80 +1,76 @@
 [
   {
-    "id": "full_name",
-    "section": "dados_basicos",
-    "type": "text",
-    "question": "Qual é o seu nome completo?",
-    "placeholder": "Digite seu nome...",
-    "required": true
-  },
-  {
-    "id": "email",
-    "section": "dados_basicos",
-    "type": "email",
-    "question": "Qual é o seu e-mail corporativo ou principal?",
-    "placeholder": "exemplo@empresa.com",
-    "required": true
-  },
-  {
-    "id": "phone",
-    "section": "dados_basicos",
-    "type": "tel",
-    "question": "Qual é o seu telefone / WhatsApp com DDD?",
-    "placeholder": "(11) 99999-9999",
-    "required": true
-  },
-  {
     "id": "education",
-    "section": "escolaridade",
-    "type": "select",
-    "question": "Qual é o seu nível de escolaridade formal mais alto?",
+    "section": "step1",
+    "type": "radio",
+    "question": "1- Qual seu nível educacional?",
     "options": [
-      { "label": "Doutorado / PhD", "value": "phd", "disqualifying": false },
-      { "label": "Mestrado", "value": "master", "disqualifying": false },
-      { "label": "Pós-graduação / MBA / Especialização", "value": "post_grad", "disqualifying": false },
-      { "label": "Bacharelado / Licenciatura", "value": "bachelor", "disqualifying": false },
-      { "label": "Tecnólogo / Ensino Médio", "value": "other", "disqualifying": true }
+      { "label": "Ensino superior completo", "value": "superior", "score": 0 },
+      { "label": "Pós-graduação", "value": "pos", "score": 0 },
+      { "label": "Mestrado", "value": "mestrado", "score": 1 },
+      { "label": "Doutorado", "value": "doutorado", "score": 1 }
     ],
     "required": true
   },
   {
     "id": "experience",
-    "section": "experiencia",
-    "type": "select",
-    "question": "Quantos anos de experiência profissional progressiva você possui na sua área?",
-    "options": [
-      { "label": "Mais de 10 anos", "value": "10plus", "disqualifying": false },
-      { "label": "De 5 a 10 anos", "value": "5to10", "disqualifying": false },
-      { "label": "De 3 a 5 anos", "value": "3to5", "disqualifying": false },
-      { "label": "Menos de 3 anos", "value": "less3", "disqualifying": true }
-    ],
-    "required": true
-  },
-  {
-    "id": "achievements",
-    "section": "conquistas",
-    "type": "checkbox_group",
-    "question": "Selecione as conquistas que você consegue comprovar documentalmente (marque todas que se aplicam):",
-    "options": [
-      { "label": "Recebi prêmios de reconhecimento nacional ou internacional por excelência profissional.", "value": "awards", "disqualifying": false },
-      { "label": "Sou membro de associação profissional que exige realizações notáveis dos membros.", "value": "membership", "disqualifying": false },
-      { "label": "Tive artigos ou matérias publicadas sobre mim ou meu trabalho em veículos de grande circulação.", "value": "media", "disqualifying": false },
-      { "label": "Já atuei formalmente julgando ou avaliando o trabalho de outros profissionais da minha área.", "value": "judging", "disqualifying": false },
-      { "label": "Possuo artigos científicos publicados ou patentes registradas sob minha autoria.", "value": "scholarly", "disqualifying": false },
-      { "label": "Desempenhei papel de liderança ou função crítica em empresas de grande prestígio ou relevância.", "value": "critical_role", "disqualifying": false },
-      { "label": "Recebo ou recebi remuneração significativamente acima da média do mercado na minha profissão.", "value": "high_salary", "disqualifying": false },
-      { "label": "Não possuo nenhuma das conquistas citadas acima no momento.", "value": "none", "disqualifying": true }
-    ],
-    "required": true
-  },
-  {
-    "id": "us_plans",
-    "section": "planos",
+    "section": "step2",
     "type": "radio",
-    "question": "Você pretende continuar atuando na mesma área de especialidade nos Estados Unidos?",
+    "question": "2- Quanto tempo de experiência na área você possui?",
     "options": [
-      { "label": "Sim, com absoluta certeza.", "value": "yes", "disqualifying": false },
-      { "label": "Não, pretendo mudar de área ou aposentar-me.", "value": "no", "disqualifying": true }
+      { "label": "Menos de 1 ano", "value": "menos1", "score": 0 },
+      { "label": "1-5 anos", "value": "1a5", "score": 0 },
+      { "label": "5-10 anos", "value": "5a10", "score": 1 },
+      { "label": "+10 anos", "value": "mais10", "score": 1 }
+    ],
+    "required": true
+  },
+  {
+    "id": "field_of_study",
+    "section": "step3",
+    "type": "radio",
+    "question": "3- Qual sua área de formação?",
+    "options": [
+      { "label": "Tecnologia, ciências e engenharia", "value": "tech", "score": 1 },
+      { "label": "Saúde", "value": "health", "score": 1 },
+      { "label": "Negócios e Empreendedorismo", "value": "business", "score": 1 },
+      { "label": "Direito", "value": "law", "score": 1 },
+      { "label": "Nenhuma das anteriores", "value": "other", "score": 0 }
+    ],
+    "required": true
+  },
+  {
+    "id": "awards",
+    "section": "step4",
+    "type": "radio",
+    "question": "4- Você possui prêmios ou reconhecimentos em sua área?",
+    "options": [
+      { "label": "Sim, possuo reconhecimentos profissionais", "value": "sim", "score": 1 },
+      { "label": "Não tenho destaque na minha área", "value": "nao", "score": 0 }
+    ],
+    "required": true
+  },
+  {
+    "id": "leadership",
+    "section": "step5",
+    "type": "radio",
+    "question": "5- Você possui empresa ou ocupa cargo de liderança?",
+    "options": [
+      { "label": "Sim, ocupo cargo de liderança estratégica", "value": "lideranca", "score": 1 },
+      { "label": "Não, atuo de forma operacional no setor", "value": "operacional", "score": 0 },
+      { "label": "Possuo empresa própria", "value": "empresa", "score": 1 }
+    ],
+    "required": true
+  },
+  {
+    "id": "financial",
+    "section": "step6",
+    "type": "radio",
+    "question": "6- Qual sua disponibilidade financeira para investir no processo?",
+    "options": [
+      { "label": "Até R$50 mil", "value": "ate50", "score": 0 },
+      { "label": "Até R$100 mil", "value": "ate100", "score": 1 },
+      { "label": "Até R$150 mil", "value": "ate150", "score": 1 }
     ],
     "required": true
   }
