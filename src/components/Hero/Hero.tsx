@@ -57,6 +57,12 @@ export default function Hero({ onOpenModal }: HeroProps) {
         className="hero__shape hero__shape--right"
       />
 
+      <img
+        src="/bandeira-eua.png"
+        alt="Bandeira dos Estados Unidos"
+        className="hero__flag"
+      />
+
       <div className="container hero__container">
         {/* Badge superior */}
         <div className="hero__badge-box" ref={badgeRef}>
