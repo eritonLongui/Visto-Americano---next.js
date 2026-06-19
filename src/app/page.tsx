@@ -10,6 +10,7 @@ import Hero from "../components/Hero/Hero";
 import Partnership from "../components/Partnership/Partnership";
 import VisaTypes from "../components/VisaTypes/VisaTypes";
 import Process from "../components/Process/Process";
+import About from "../components/About/About";
 import CtaSection from "../components/CtaSection/CtaSection";
 import Footer from "../components/Footer/Footer";
 import QualificationModal from "../components/QualificationModal/QualificationModal";
@@ -62,6 +63,7 @@ export default function Home() {
         <VisaTypes onOpenModal={openModal} />
         <Partnership onOpenModal={openModal} />
         <Process />
+        <About />
         <CtaSection onOpenModal={openModal} />
       </main>
       <Footer />

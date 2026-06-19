@@ -19,8 +19,8 @@ export default function VisaTypes({ onOpenModal }: VisaTypesProps) {
       <div className="container visa-types__container">
         {/* Cabeçalho */}
         <div className="visa-types__header reveal-on-scroll">
-          <h2 className="visa-types__title">Quais são os principais requisitos dos vistos imigratórios?</h2>
-          <p className="visa-types__description">Você pode estar a alguns cliques do Green Card!</p>
+          <h2 className="visa-types__title">Atender os requisitos é mais simples do que parece</h2>
+          <p className="visa-types__description">Você pode estar a alguns cliques do Green Card! Confira os principais requisitos das categorias:</p>
         </div>
 
         {/* Grid dos Cards de Visto */}
