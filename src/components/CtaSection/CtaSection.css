@@ -6,11 +6,40 @@
     height: 100vh;
     background: linear-gradient(30deg, var(--color-bg-accent) 0%, var(--color-bg-secondary) 50%, var(--color-bg-secondary) 100%);
     z-index: 5;
+    overflow: hidden;
+}
+
+.cta-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url('/textura_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  mix-blend-mode: plus-darker;
+  opacity: 0.15;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cta-section__flag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18vw;
+    height: auto;
+    z-index: 2;
+    opacity: 0.9;
+    transform: translateY(-15%);
 }
 
 .cta-section__shape {
     position: absolute;
-    top: -30vh;
+    bottom: 0;
     right: 0;
     transform: scale(-1, 1);
     height: 180vh;

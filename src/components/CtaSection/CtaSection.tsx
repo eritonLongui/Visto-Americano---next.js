@@ -10,6 +10,12 @@ export default function CtaSection({ onOpenModal }: CtaSectionProps) {
     return (
         <section className="cta-section">
             <img
+                src="/bandeira-pendurada.png"
+                alt="Bandeira dos Estados Unidos pendurada"
+                className="cta-section__flag"
+            />
+
+            <img
                 src="/logo metade.svg"
                 alt="Logo da Nostrali dividido ao meio"
                 className="cta-section__shape"

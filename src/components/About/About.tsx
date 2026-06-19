@@ -5,6 +5,12 @@ import "./About.css";
 export default function About() {
     return (
         <section className="about-section">
+            <img
+                src="/logo metade.svg"
+                alt="Logo da Nostrali dividido ao meio"
+                className="about-section__shape"
+            />
+
             <div className="about__header reveal-on-scroll">
                 <h2 className="about__title">Expertise para te assessorar no sonho americano!</h2>
             </div>
