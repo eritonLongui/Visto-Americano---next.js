@@ -7,8 +7,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 // Importando os componentes customizados
 import Header from "../components/Header/Header";
 import Hero from "../components/Hero/Hero";
-import Partnership from "../components/Partnership/Partnership";
 import VisaTypes from "../components/VisaTypes/VisaTypes";
+import Partnership from "../components/Partnership/Partnership";
 import Process from "../components/Process/Process";
 import About from "../components/About/About";
 import CtaSection from "../components/CtaSection/CtaSection";

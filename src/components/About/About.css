@@ -64,7 +64,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     text-align: justify;
     gap: 36px;
 }
@@ -99,6 +99,6 @@
 
 .about__card h4 {
     font-family: var(--font-body);
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: var(--color-red-accent);
 }

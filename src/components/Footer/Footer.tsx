@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { ChevronUp } from "lucide-react";
 import "./Footer.css";
 
 export default function Footer() {
@@ -25,23 +26,28 @@ export default function Footer() {
         <div className="footer__grid">
           {/* Coluna 1: Branding e Descrição */}
           <div className="footer__branding">
-            <div className="footer__logo">
-              <span className="footer__brand-nostrali">Nostrali</span>
-              <div className="footer__brand-divider" />
-              <span className="footer__brand-oceanik">Oceanik</span>
-            </div>
-            <p className="footer__tagline">
-              Parceria estratégica de alta curadoria técnica jurídica para processos de internacionalização e imigração profissional de elite para os Estados Unidos.
-            </p>
+            <a
+              href="https://www.nostrali.com.br/"
+              className="footer__logo-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+            >
+              <img
+                src="/logo-nostrali-card.svg"
+                alt="Logo Nostrali"
+                className="footer__logo-img"
+              />
+            </a>
           </div>
 
           {/* Coluna 2: Navegação Rápida */}
-          <div>
+          <div className="footer__nav">
             <h4 className="footer__section-title">Navegação</h4>
             <ul className="footer__links">
               <li>
-                <a 
-                  href="#parceria" 
+                <a
+                  href="#parceria"
                   className="footer__link"
                   onClick={(e) => handleNavLinkClick(e, "parceria")}
                 >
@@ -49,46 +55,46 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a 
-                  href="#vistos" 
+                <a
+                  href="#requisitos"
                   className="footer__link"
-                  onClick={(e) => handleNavLinkClick(e, "vistos")}
+                  onClick={(e) => handleNavLinkClick(e, "requisitos")}
                 >
-                  Vistos de Elite
+                  Requisitos
                 </a>
               </li>
               <li>
-                <a 
-                  href="#processo" 
+                <a
+                  href="#jornada"
                   className="footer__link"
-                  onClick={(e) => handleNavLinkClick(e, "processo")}
+                  onClick={(e) => handleNavLinkClick(e, "jornada")}
                 >
-                  Processo Seletivo
+                  Como Funciona
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Coluna 3: Contato & Informações */}
-          <div>
-            <h4 className="footer__section-title">Contatos Corporativos</h4>
-            <ul className="footer__links">
-              <li className="footer__link">Nostrali Cidadania Italiana</li>
-              <li className="footer__link">Oceanik Group Corporate</li>
-              <li className="footer__link">Atendimento Reservado por Qualificação</li>
-            </ul>
+          <div className="footer__back-to-top">
+            <button 
+              className="footer__btt-btn"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              aria-label="Voltar ao topo"
+            >
+              <ChevronUp size={24} />
+              <span>Voltar ao topo</span>
+            </button>
           </div>
         </div>
 
         {/* Rodapé e Disclaimer */}
         <div className="footer__bottom">
-          <p className="footer__disclaimer">
+          {/* <p className="footer__disclaimer">
             * Isenção de Responsabilidade Legal: A triagem eletrônica e a análise prévia de elegibilidade promovidas neste site possuem caráter puramente consultivo e informativo, baseadas nos critérios fornecidos pelo usuário. Esta análise não constitui serviço de aconselhamento jurídico definitivo e não garante, sob qualquer hipótese, a aprovação de vistos, petições ou benefícios migratórios por parte dos Serviços de Cidadania e Imigração dos Estados Unidos (USCIS) ou do Departamento de Estado Americano. Os casos aceitos para assessoria passam por contratação jurídica formal individualizada.
-          </p>
-          
+          </p> */}
+
           <div className="footer__copyright">
-            <span>© {new Date().getFullYear()} Nostrali & Oceanik Group. Todos os direitos reservados.</span>
-            <span>Desenvolvido de forma exclusiva e restrita.</span>
+            <span>© {new Date().getFullYear()} Gruppo Nostrali | Todos os direitos reservados.</span>
           </div>
         </div>
       </div>
