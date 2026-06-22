@@ -20,7 +20,7 @@
 .modal-box {
   width: 100%;
   max-width: 680px;
-  background-color: var(--color-bg-secondary);
+  background-color: var(--color-bg-primary);
   border: 1px solid var(--color-bg-accent);
   border-radius: var(--border-radius-lg);
   position: relative;
@@ -42,7 +42,7 @@
 
 .modal-box__progress-bar {
   height: 100%;
-  background: linear-gradient(to right, var(--color-blue-brand), var(--color-blue-brand), var(--color-red-brand), var(--color-red-brand));
+  background: var(--color-red-brand);
   width: 0%;
   transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -59,6 +59,12 @@
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-light-warm);
+}
+
+.modal-box__first-btn {
+  font-size: 1.2rem;
+  padding-right: 2.2rem;
+  padding-left: 2.2rem;
 }
 
 .modal-box__close-btn {
@@ -139,7 +145,7 @@
 }
 
 .form-group__input:focus {
-  border-color: var(--color-blue-brand);
+  border-color: var(--color-red-brand);
 }
 
 .form-group__select {
@@ -161,21 +167,22 @@
 }
 
 .form-group__select:focus {
-  border-color: var(--color-blue-brand);
+  border-color: var(--color-red-brand);
 }
 
 /* Opções de Radio e Checkbox Premium */
 .form-group__options-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
+  height: 280px;
 }
 
 .form-group__option-card {
   display: flex;
   align-items: flex-start;
   gap: 14px;
-  padding: 16px 20px;
+  padding: 12px 20px;
   background-color: var(--color-bg-tertiary);
   border: 1px solid var(--color-bg-accent);
   border-radius: var(--border-radius-sm);
@@ -189,15 +196,15 @@
 }
 
 .form-group__option-card--selected {
-  border-color: var(--color-blue-brand);
-  background-color: rgba(0, 98, 158, 0.05);
+  border-color: var(--color-red-brand);
+  background-color: var(--color-red-light);
 }
 
 .form-group__checkbox,
 .form-group__radio {
   width: 18px;
   height: 18px;
-  accent-color: var(--color-blue-brand);
+  accent-color: var(--color-red-brand);
   flex-shrink: 0;
   margin-top: 2px;
   cursor: pointer;
@@ -328,5 +335,39 @@
   
   .result-screen__title {
     font-size: 1.5rem;
+  }
+}
+
+/* Toast de erro global */
+.global-error-toast {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  color: var(--color-red-accent);
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: -1;
+  animation: slideToastInOut 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideToastInOut {
+  0% {
+    bottom: 0;
+    opacity: 0;
+  }
+  15% {
+    bottom: calc(100% + 12px);
+    opacity: 1;
+  }
+  85% {
+    bottom: calc(100% + 12px);
+    opacity: 1;
+  }
+  100% {
+    bottom: 0;
+    opacity: 0;
   }
 }

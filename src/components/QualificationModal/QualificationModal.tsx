@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { X, CheckCircle, AlertTriangle, ChevronRight, ChevronLeft } from "lucide-react";
+import { X, CheckCircle, ChevronRight, ChevronLeft } from "lucide-react";
 import questionsData from "../../data/questions.json";
 import "./QualificationModal.css";
 
@@ -27,7 +27,7 @@ interface Question {
 }
 
 export default function QualificationModal({ isOpen, onClose }: QualificationModalProps) {
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(0);
   const totalSteps = 6;
 
   const [formData, setFormData] = useState<Record<string, any>>({
@@ -43,6 +43,7 @@ export default function QualificationModal({ isOpen, onClose }: QualificationMod
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [showToastError, setShowToastError] = useState(false);
   const [eligibilityResult, setEligibilityResult] = useState<"approved" | "rejected" | null>(null);
   const [totalScore, setTotalScore] = useState(0);
 
@@ -76,13 +77,11 @@ export default function QualificationModal({ isOpen, onClose }: QualificationMod
       if (q.required) {
         const val = formData[q.id];
         if (!val || (Array.isArray(val) && val.length === 0)) {
-          newErrors[q.id] = "Este campo é de preenchimento obrigatório para análise.";
           isValid = false;
         }
       }
     });
 
-    setErrors(newErrors);
     return isValid;
   };
 
@@ -109,16 +108,21 @@ export default function QualificationModal({ isOpen, onClose }: QualificationMod
 
   const handleNext = () => {
     if (validateStep(currentStep)) {
+      setShowToastError(false);
       if (currentStep < totalSteps) {
         setCurrentStep(prev => prev + 1);
       } else {
         processEligibility();
       }
+    } else {
+      setShowToastError(false);
+      setTimeout(() => setShowToastError(true), 10);
+      setTimeout(() => setShowToastError(false), 2000);
     }
   };
 
   const handleBack = () => {
-    if (currentStep > 1) {
+    if (currentStep > 0) {
       setCurrentStep(prev => prev - 1);
     }
   };
@@ -176,10 +180,10 @@ export default function QualificationModal({ isOpen, onClose }: QualificationMod
     });
     setErrors({});
     setEligibilityResult(null);
-    setCurrentStep(1);
+    setCurrentStep(0);
   };
 
-  const progressPercent = eligibilityResult ? 100 : ((currentStep - 1) / totalSteps) * 100;
+  const progressPercent = eligibilityResult ? 100 : currentStep === 0 ? 0 : (currentStep / totalSteps) * 100;
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -201,7 +205,22 @@ export default function QualificationModal({ isOpen, onClose }: QualificationMod
         </div>
 
         <div className="modal-box__body">
-          {currentStep <= totalSteps ? (
+          {currentStep === 0 ? (
+            <div className="intro-screen" style={{ textAlign: "center", padding: "72px 24px" }}>
+              <h2 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "16px", textTransform: "uppercase" }}>
+                FORMULÁRIO DE QUALIFICAÇÃO
+              </h2>
+              <p style={{ fontSize: "16px", marginBottom: "96px" }}>
+                Descubra se o seu perfil é elegível para os vistos EB-1 e EB-2 NIW
+              </p>
+              <button 
+                className="button-premium button-premium--primary modal-box__first-btn"
+                onClick={() => setCurrentStep(1)}
+              >
+                Iniciar análise
+              </button>
+            </div>
+          ) : currentStep <= totalSteps ? (
             <div className="modal-box__form-container">
               <span className="modal-box__step-indicator">
                 Etapa {currentStep} de {totalSteps}
@@ -244,12 +263,16 @@ export default function QualificationModal({ isOpen, onClose }: QualificationMod
                     </div>
                   )}
 
-                  {errors[q.id] && <span className="form-group__error">{errors[q.id]}</span>}
                 </div>
               ))}
 
-              <div className="modal-box__footer">
-                {currentStep > 1 && (
+              <div className="modal-box__footer" style={{ position: "relative", zIndex: 2 }}>
+                {showToastError && (
+                  <div className="global-error-toast">
+                    Este campo é de preenchimento obrigatório para análise.
+                  </div>
+                )}
+                {currentStep > 0 && (
                   <button 
                     className="button-premium button-premium--secondary"
                     onClick={handleBack}
