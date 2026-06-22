@@ -152,23 +152,75 @@
 
 /* Responsividade */
 @media (max-width: 1320px) {
+  .visa-types__grid {
+    grid-template-columns: repeat(2, 520px);
+    margin: 0 auto;
+    gap: 24px;
+  }
+  
   .visa-types__card {
-    width: 520;
+    width: 520px;
+  }
+
+  .visa-types__card-header {
+    gap: 0;
+  }
+
+  .visa-types__card-name {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 1140px) {
+  .visa-types__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .visa-types__card {
+    width: 480px;
+  }
+
+  .visa-types__card-name {
+    font-size: 2.2rem;
+  }
+
+  .visa-types__card-description {
+    text-align: justify;
+  }
+}
+
+@media (max-width: 1080px) {
+  .visa-types__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .visa-types__card {
+    width: 448px;
+  }
+
+  .visa-types__card-name {
+    font-size: 2rem;
+  }
+
+  .visa-types__card-badge {
+    font-size: 0.70rem;
+    padding: 6px 14px;
+  }
+
+  .visa-types__card-description {
+    font-size: 1.1rem;
   }
 }
 
 @media (max-width: 991px) {
-  .visa-types {
-    height: auto;
-    padding: 80px 0;
-  }
-
-  .visa-types__container {
-    height: auto;
+  .visa-types__header {
+    margin-bottom: 24px;
   }
 
   .visa-types__title {
     font-size: 2.2rem;
+    margin-bottom: 6px;
   }
 
   .visa-types__grid {
@@ -178,18 +230,31 @@
 
   .visa-types__card {
     width: 600;
+    padding: 36px 48px;
+    gap: 12px;
+  }
+
+  .visa-types__card-name {
+    font-size: 2rem;
+  }
+
+  .visa-types__card-badge {
+    font-size: 0.60rem;
+    padding: 4px 12px;
   }
 
   .visa-types__footer {
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
     gap: 16px;
-    margin-top: 24px;
+    margin-top: 12px;
+    padding: 0 36px;
   }
 
+  .visa-types__footer-text{
+    font-size: 1.1rem;
+  }
+  
   .visa-types__footer-btn {
-    width: 100%;
+    font-size: 1.1rem !important;
   }
 
   .visa-types__shape {
@@ -197,18 +262,153 @@
   }
 }
 
+@media (max-width: 840) {
+  .visa-types__title {
+    font-size: 2rem;
+  }
+}
+
 @media (max-width: 767px) {
+  .visa-types__header {
+    margin-bottom: 36px;
+  }
+
   .visa-types__title {
     font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+
+  .visa-types__description {
+    font-size: 1rem;
   }
   
+  .visa-types__grid {
+    gap: 36px;
+  }
+
   .visa-types__card {
     padding: 32px;
   }
 
-  .visa-types__card-header {
-    flex-direction: column;
-    align-items: flex-start;
+  .visa-types__footer {
+    margin-top: 36px;
+  }
+}
+
+@media (max-width: 680px) {
+  .visa-types__container {
+    padding: 0 48px;
+  }
+
+  .visa-types__card {
+    width: 520px;
+    padding: 24px;
+  }
+
+  .visa-types__grid {
+    gap: 24px;
+  }
+
+  .visa-types__footer {
+    margin-top: 24px;
+    padding: 0;
+  }
+
+  .visa-types__footer-text {
+    font-size: 1rem;
+    text-align: end;
+  }
+
+  .visa-types__footer-btn {
+    font-size: 1rem !important;
+    padding: 4px 16px !important;
+    min-width: 191px;
+  }
+}
+
+@media (max-width: 640px) {
+  .visa-types__container {
+    padding: 0 36px;
+  }
+
+  .visa-types__grid {
+    margin: 0;
+    padding: 0;
+  }
+
+  .visa-types__card {
+    width: 480px;
+  }
+
+  .visa-types__card-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 570px) {
+  .visa-types__container {
+    padding: 0 24px;
+  }
+
+  .visa-types__card {
+    width: 440px;
+  }
+}
+
+@media (max-width: 512px) {
+  .visa-types__header {
+    margin-bottom: 24px;
+  }
+
+  .visa-types__card {
+    width: 380px;
     gap: 8px;
+  }
+
+  .visa-types__card-name {
+    font-size: 1.6rem;
+  }
+
+  .visa-types__card-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 448px) {
+  .visa-types__container {
+    gap: 16px;
+  }
+
+  .visa-types__title {
+    font-size: 1.6rem;
+  }
+
+  .visa-types__description {
+    font-size: 0.85rem;
+  }
+
+  .visa-types__card {
+    width: 320px;
+    padding: 18px;
+  }
+
+  .visa-types__card-name {
+    font-size: 1.4rem;
+  }
+
+  .visa-types__card-badge {
+    font-size: 0.55rem;
+  }
+
+  .visa-types__footer {
+    margin-top: 12px;
+    margin-right: 8px;
+    flex-direction: column;
+    align-items: end;
+    gap: 8px;
+  }
+
+  .visa-types__footer-text {
+    font-size: 0.9rem;
   }
 }

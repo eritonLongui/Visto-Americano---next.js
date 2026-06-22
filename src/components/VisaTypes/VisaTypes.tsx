@@ -44,7 +44,7 @@ export default function VisaTypes({ onOpenModal }: VisaTypesProps) {
           {/* Card EB-2 */}
           <div className="visa-types__card reveal-on-scroll">
             <div className="visa-types__card-header">
-              <h3 className="visa-types__card-name visa-types__card-name--eb2">EB-2</h3>
+              <h3 className="visa-types__card-name visa-types__card-name--eb2">EB-2 NIW</h3>
               <span className="visa-types__card-badge visa-types__card-badge--eb2">
                 Isenção de Interesse National
               </span>
