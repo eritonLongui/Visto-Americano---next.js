@@ -213,7 +213,7 @@ export default function QualificationModal({ isOpen, onClose }: QualificationMod
         <div className="modal-box__body">
           {currentStep === 0 ? (
             <div className="intro-screen" style={{ textAlign: "center", padding: "72px 24px" }}>
-              <h2 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "16px", textTransform: "uppercase" }}>
+              <h2 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "16px", textTransform: "uppercase" , letterSpacing: "1px" }}>
                 FORMULÁRIO DE QUALIFICAÇÃO
               </h2>
               <p style={{ fontSize: "16px", marginBottom: "96px" }}>

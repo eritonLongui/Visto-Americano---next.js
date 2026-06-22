@@ -16,7 +16,7 @@ const benefits = [
 
 export default function Partnership({ onOpenModal }: PartnershipProps) {
   return (
-    <section className="partnership partnership-sticky" id="parceria">
+    <section className="partnership partnership-sticky" id="vantagens">
       <div className="partnership__divider"></div>
       <img
         src="/mapa europa.svg"

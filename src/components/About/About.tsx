@@ -2,7 +2,7 @@ import "./About.css";
 
 export default function About() {
     return (
-        <section className="about-section">
+        <section className="about-section" id="assessoria">
             <img
                 src="/bandeira-pendurada.png"
                 alt="Bandeira dos Estados Unidos pendurada"

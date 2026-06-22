@@ -20,8 +20,16 @@ export default function Header({ onOpenModal }: HeaderProps) {
     
     const element = document.getElementById(targetId);
     if (element) {
-      // Como o header está no fluxo (não fixo), rolamos direto para o elemento!
-      element.scrollIntoView({
+      // Como os elementos "Requisitos" e "Vantagens" são position: sticky, 
+      // o scroll se perde dependendo de onde você está na página.
+      // Calculamos a posição real exata forçando o elemento para o fluxo normal por 1 milissegundo.
+      const originalPosition = element.style.position;
+      element.style.position = "static";
+      const targetY = element.getBoundingClientRect().top + window.scrollY;
+      element.style.position = originalPosition;
+
+      window.scrollTo({
+        top: targetY,
         behavior: "smooth"
       });
     }
@@ -91,11 +99,11 @@ export default function Header({ onOpenModal }: HeaderProps) {
             </li>
             <li>
               <a 
-                href="#parceria" 
+                href="#vantagens" 
                 className="header__nav-link"
-                onClick={(e) => handleNavLinkClick(e, "parceria")}
+                onClick={(e) => handleNavLinkClick(e, "vantagens")}
               >
-                A Parceria
+                Vantagens
               </a>
             </li>
             <li>
@@ -105,6 +113,15 @@ export default function Header({ onOpenModal }: HeaderProps) {
                 onClick={(e) => handleNavLinkClick(e, "jornada")}
               >
                 Como Funciona
+              </a>
+            </li>
+            <li>
+              <a 
+                href="#assessoria" 
+                className="header__nav-link"
+                onClick={(e) => handleNavLinkClick(e, "assessoria")}
+              >
+                A Assessoria
               </a>
             </li>
           </ul>

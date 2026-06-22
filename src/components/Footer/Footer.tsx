@@ -9,12 +9,13 @@ export default function Footer() {
     e.preventDefault();
     const element = document.getElementById(targetId);
     if (element) {
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      const originalPosition = element.style.position;
+      element.style.position = "static";
+      const targetY = element.getBoundingClientRect().top + window.scrollY;
+      element.style.position = originalPosition;
 
       window.scrollTo({
-        top: offsetPosition,
+        top: targetY,
         behavior: "smooth"
       });
     }
@@ -47,20 +48,20 @@ export default function Footer() {
             <ul className="footer__links">
               <li>
                 <a
-                  href="#parceria"
-                  className="footer__link"
-                  onClick={(e) => handleNavLinkClick(e, "parceria")}
-                >
-                  A Parceria
-                </a>
-              </li>
-              <li>
-                <a
                   href="#requisitos"
                   className="footer__link"
                   onClick={(e) => handleNavLinkClick(e, "requisitos")}
                 >
                   Requisitos
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#vantagens"
+                  className="footer__link"
+                  onClick={(e) => handleNavLinkClick(e, "vantagens")}
+                >
+                  Vantagens
                 </a>
               </li>
               <li>
@@ -72,11 +73,20 @@ export default function Footer() {
                   Como Funciona
                 </a>
               </li>
+              <li>
+                <a
+                  href="#assessoria"
+                  className="footer__link"
+                  onClick={(e) => handleNavLinkClick(e, "assessoria")}
+                >
+                  A Assessoria
+                </a>
+              </li>
             </ul>
           </div>
 
           <div className="footer__back-to-top">
-            <button 
+            <button
               className="footer__btt-btn"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               aria-label="Voltar ao topo"
