@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { X, CheckCircle, ChevronRight, ChevronLeft } from "lucide-react";
+import { X, CheckCircle, Puzzle, ChevronRight, ChevronLeft } from "lucide-react";
 import questionsData from "../../data/questions.json";
 import "./QualificationModal.css";
 
@@ -44,6 +44,7 @@ export default function QualificationModal({ isOpen, onClose }: QualificationMod
 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [showToastError, setShowToastError] = useState(false);
+  const [showContactErrors, setShowContactErrors] = useState(false);
   const [eligibilityResult, setEligibilityResult] = useState<"approved" | "rejected" | null>(null);
   const [totalScore, setTotalScore] = useState(0);
 
@@ -146,7 +147,7 @@ export default function QualificationModal({ isOpen, onClose }: QualificationMod
     } else {
       setEligibilityResult("rejected");
     }
-    
+
     setCurrentStep(7);
   };
 
@@ -162,7 +163,12 @@ export default function QualificationModal({ isOpen, onClose }: QualificationMod
 
   const handleSubmitContact = () => {
     if (validateContactData()) {
+      setShowContactErrors(false);
       window.open(getWhatsAppLinkApproved(), '_blank');
+    } else {
+      setShowContactErrors(false);
+      setTimeout(() => setShowContactErrors(true), 10);
+      setTimeout(() => setShowContactErrors(false), 2000);
     }
   }
 
@@ -189,8 +195,8 @@ export default function QualificationModal({ isOpen, onClose }: QualificationMod
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-box" onClick={(e) => e.stopPropagation()}>
         <div className="modal-box__progress-container">
-          <div 
-            className="modal-box__progress-bar" 
+          <div
+            className="modal-box__progress-bar"
             style={{ width: `${progressPercent}%` }}
           />
         </div>
@@ -213,7 +219,7 @@ export default function QualificationModal({ isOpen, onClose }: QualificationMod
               <p style={{ fontSize: "16px", marginBottom: "96px" }}>
                 Descubra se o seu perfil é elegível para os vistos EB-1 e EB-2 NIW
               </p>
-              <button 
+              <button
                 className="button-premium button-premium--primary modal-box__first-btn"
                 onClick={() => setCurrentStep(1)}
               >
@@ -245,8 +251,8 @@ export default function QualificationModal({ isOpen, onClose }: QualificationMod
                       {q.options?.map(o => {
                         const isSelected = formData[q.id] === o.value;
                         return (
-                          <div 
-                            key={o.value} 
+                          <div
+                            key={o.value}
                             className={`form-group__option-card ${isSelected ? "form-group__option-card--selected" : ""}`}
                             onClick={() => handleInputChange(q.id, o.value)}
                           >
@@ -273,18 +279,18 @@ export default function QualificationModal({ isOpen, onClose }: QualificationMod
                   </div>
                 )}
                 {currentStep > 0 && (
-                  <button 
+                  <button
                     className="button-premium button-premium--secondary"
                     onClick={handleBack}
                   >
                     <ChevronLeft size={16} style={{ marginRight: 8 }} /> Voltar
                   </button>
                 )}
-                <button 
+                <button
                   className="button-premium button-premium--primary"
                   onClick={handleNext}
                 >
-                  {currentStep === totalSteps ? "Verificar Elegibilidade" : "Avançar"} 
+                  {currentStep === totalSteps ? "Verificar Elegibilidade" : "Avançar"}
                   {currentStep !== totalSteps && <ChevronRight size={16} style={{ marginLeft: 8 }} />}
                 </button>
               </div>
@@ -300,76 +306,79 @@ export default function QualificationModal({ isOpen, onClose }: QualificationMod
                   <p className="result-screen__text" style={{ marginBottom: "20px" }}>
                     Preencha seus dados para que nossa equipe especialista dê sequência com o atendimento:
                   </p>
-                  
-                  <div className="form-group" style={{ textAlign: "left" }}>
-                    <label className="form-group__label">Nome completo *</label>
-                    <input
-                      type="text"
-                      className="form-group__input"
-                      value={formData.full_name}
-                      onChange={(e) => handleInputChange("full_name", e.target.value)}
-                      placeholder="Digite seu nome..."
-                    />
-                    {errors.full_name && <span className="form-group__error">{errors.full_name}</span>}
-                  </div>
-                  
-                  <div className="form-group" style={{ textAlign: "left" }}>
-                    <label className="form-group__label">Email *</label>
-                    <input
-                      type="email"
-                      className="form-group__input"
-                      value={formData.email}
-                      onChange={(e) => handleInputChange("email", e.target.value)}
-                      placeholder="exemplo@empresa.com"
-                    />
-                    {errors.email && <span className="form-group__error">{errors.email}</span>}
-                  </div>
 
-                  <div className="form-group" style={{ textAlign: "left" }}>
-                    <label className="form-group__label">Telefone *</label>
-                    <input
-                      type="tel"
-                      className="form-group__input"
-                      value={formData.phone}
-                      onChange={(e) => handleInputChange("phone", e.target.value)}
-                      placeholder="(11) 99999-9999"
-                    />
-                    {errors.phone && <span className="form-group__error">{errors.phone}</span>}
-                  </div>
+                  <div className="result-screen__form-container">
+                    <div className="form-group" style={{ position: "relative" }}>
+                      <label className="form-group__label">Nome completo *</label>
+                      <input
+                        type="text"
+                        className="form-group__input"
+                        value={formData.full_name}
+                        onChange={(e) => handleInputChange("full_name", e.target.value)}
+                        placeholder="Digite seu nome..."
+                      />
+                      {showContactErrors && errors.full_name && <span className="field-error-toast">{errors.full_name}</span>}
+                    </div>
 
-                  <div className="result-screen__actions" style={{ marginTop: "24px" }}>
-                    <button 
-                      className="button-premium button-premium--primary"
-                      onClick={handleSubmitContact}
-                    >
-                      Enviar e Falar com a Equipe
-                    </button>
+                    <div className="form-group" style={{ position: "relative" }}>
+                      <label className="form-group__label">Email *</label>
+                      <input
+                        type="email"
+                        className="form-group__input"
+                        value={formData.email}
+                        onChange={(e) => handleInputChange("email", e.target.value)}
+                        placeholder="exemplo@empresa.com"
+                      />
+                      {showContactErrors && errors.email && <span className="field-error-toast">{errors.email}</span>}
+                    </div>
+
+                    <div className="form-group" style={{ position: "relative" }}>
+                      <label className="form-group__label">Telefone *</label>
+                      <input
+                        type="tel"
+                        className="form-group__input"
+                        value={formData.phone}
+                        onChange={(e) => handleInputChange("phone", e.target.value)}
+                        placeholder="(11) 99999-9999"
+                      />
+                      {showContactErrors && errors.phone && <span className="field-error-toast">{errors.phone}</span>}
+                    </div>
+
+                    <div className="result-screen__actions">
+                      <button
+                        className="button-premium button-premium--primary"
+                        onClick={handleSubmitContact}
+                      >
+                        Enviar e Falar com a Equipe
+                      </button>
+                    </div>
                   </div>
                 </>
               ) : (
                 <>
                   <div className="result-screen__icon-container result-screen__icon-container--fail" style={{ background: "rgba(255, 170, 0, 0.1)", color: "#ffaa00" }}>
-                    <CheckCircle size={44} />
+                    <Puzzle size={44} />
                   </div>
                   <h4 className="result-screen__title">Seu perfil pode ser adequado para outras opções!</h4>
                   <p className="result-screen__text" style={{ textAlign: "left" }}>
                     Podemos ter outras opções para você! Clique para falar com nossa equipe especialista e conhecer os demais vistos com os quais atuamos.
-                    <br/><br/>
-                    <strong>L-1A:</strong> transferência de executivos ou gerentes de uma empresa no Brasil para uma filial, subsidiária ou matriz nos Estados Unidos.<br/><br/>
-                    <strong>L-1B:</strong> transferência de profissionais que trabalhem em cargos que exigem conhecimento especializado.<br/><br/>
-                    <strong>O-1:</strong> profissionais com habilidades extraordinárias que possuem oferta de emprego.<br/><br/>
+                  </p>
+                  <p className="result-screen__text" style={{ textAlign: "left" }}>
+                    <strong>L-1A:</strong> transferência de executivos ou gerentes de uma empresa no Brasil para uma filial, subsidiária ou matriz nos Estados Unidos.<br />
+                    <strong>L-1B:</strong> transferência de profissionais que trabalhem em cargos que exigem conhecimento especializado.<br />
+                    <strong>O-1:</strong> profissionais com habilidades extraordinárias que possuem oferta de emprego.<br />
                     <strong>Vistos de turismo ou estudantes.</strong>
                   </p>
                   <div className="result-screen__actions" style={{ marginTop: "24px" }}>
-                    <a 
-                      href={getWhatsAppLinkRejected()} 
-                      target="_blank" 
+                    <a
+                      href={getWhatsAppLinkRejected()}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="button-premium button-premium--primary"
                     >
                       Fale conosco
                     </a>
-                    <button 
+                    <button
                       className="button-premium button-premium--secondary"
                       onClick={handleReset}
                     >

@@ -31,10 +31,10 @@
     "type": "radio",
     "question": "3- Qual sua área de formação?",
     "options": [
-      { "label": "Tecnologia, ciências e engenharia", "value": "tech", "score": 1 },
-      { "label": "Saúde", "value": "health", "score": 1 },
-      { "label": "Negócios e Empreendedorismo", "value": "business", "score": 1 },
       { "label": "Direito", "value": "law", "score": 1 },
+      { "label": "Negócios e Empreendedorismo", "value": "business", "score": 1 },
+      { "label": "Saúde", "value": "health", "score": 1 },
+      { "label": "Tecnologia, ciências e engenharia", "value": "tech", "score": 1 },
       { "label": "Nenhuma das anteriores", "value": "other", "score": 0 }
     ],
     "required": true
@@ -56,8 +56,8 @@
     "type": "radio",
     "question": "5- Você possui empresa ou ocupa cargo de liderança?",
     "options": [
-      { "label": "Sim, ocupo cargo de liderança estratégica", "value": "lideranca", "score": 1 },
       { "label": "Não, atuo de forma operacional no setor", "value": "operacional", "score": 0 },
+      { "label": "Sim, ocupo cargo de liderança estratégica", "value": "lideranca", "score": 1 },
       { "label": "Possuo empresa própria", "value": "empresa", "score": 1 }
     ],
     "required": true

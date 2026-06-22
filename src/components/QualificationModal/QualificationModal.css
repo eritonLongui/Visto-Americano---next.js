@@ -112,7 +112,7 @@
 
 /* Campos do Formulário */
 .form-group {
-  margin-bottom: 28px;
+  margin-bottom: 16px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -246,7 +246,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 0;
+  padding-bottom: 16px;
 }
 
 .result-screen__icon-container {
@@ -256,7 +256,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 32px;
 }
 
 .result-screen__icon-container--success {
@@ -272,7 +271,7 @@
 }
 
 .result-screen__title {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: var(--color-light-warm);
   margin-bottom: 16px;
@@ -283,12 +282,12 @@
   color: var(--color-text-secondary);
   line-height: 1.7;
   max-width: 480px;
-  margin-bottom: 40px;
+  margin-bottom: 16px;
+  text-align: justify !important;
 }
 
 .result-screen__actions {
   width: 100%;
-  max-width: 320px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -296,6 +295,18 @@
 
 .result-screen__actions .button-premium {
   width: 100%;
+}
+
+.result-screen__form-container {
+  width: 100%;
+  max-width: 480px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.result-screen__form-container .result-screen__actions {
+  margin-top: 16px;
 }
 
 /* Animações */
@@ -369,5 +380,37 @@
   100% {
     bottom: 0;
     opacity: 0;
+  }
+}
+
+/* Toast de erro individual (acima dos campos) */
+.field-error-toast {
+  position: absolute;
+  right: 0;
+  color: var(--color-red-accent);
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
+  animation: popFieldError 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes popFieldError {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  85% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(8px);
   }
 }
