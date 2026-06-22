@@ -8,6 +8,7 @@
   color: var(--color-text-primary);
   display: flex;
   align-items: start;
+  overflow: hidden;
 }
 
 .partnership__divider {
@@ -121,6 +122,30 @@
 }
 
 /* Responsividade */
+@media (max-width: 1460px) {
+  .partnership__benefits {
+    width: 70vw;
+  }
+
+  .partnership__shape--liberty {
+    height: 85vh
+  }
+
+  .partnership__shape--right {
+    left: 575px;
+  }
+}
+
+@media (max-width: 1096px) {
+  .partnership__benefits {
+    width: 75vw;
+  }
+
+  .partnership__benefit {
+    font-size: 1.25rem;
+  }
+}
+
 @media (max-width: 991px) {
   .partnership {
     height: auto !important; /* Desliga o fullscreen sticky no mobile para rolar livremente */
@@ -130,6 +155,10 @@
   
   .partnership__title {
     font-size: 2rem;
+  }
+
+  .partnership__benefits {
+    width: 80vw;
   }
 }
 
