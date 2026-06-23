@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   keywords: ["Visto Americano", "EB-1", "EB-2 NIW", "Green Card", "Nostrali Cidadania Italiana", "Imigração EUA", "Assessoria de Visto", "Qualificação de Visto"],
   authors: [{ name: "Nostrali Cidadania Italiana" }],
   openGraph: {
-    title: "Vistos Americanos EB-1 e EB-2 NIW | Gruopo Nostrali",
+    title: "Vistos Americanos EB-1 e EB-2 NIW | Gruppo Nostrali",
     description: "Formulário de qualificação de possibilidade de vistos nas categorias EB-1 e EB-2 NIW.",
     type: "website",
     locale: "pt_BR",
