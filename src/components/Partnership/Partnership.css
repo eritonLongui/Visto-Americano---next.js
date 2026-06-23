@@ -58,7 +58,8 @@
 .partnership__header {
   text-align: center;
   max-width: 840px;
-  margin: 0 auto 60px;
+  /* margin: 0 auto 60px; */
+  margin: 0 auto 6.2vh;
 }
 
 .partnership__title {
@@ -72,13 +73,15 @@
 
 .partnership__benefits {
   display: grid;
-  gap: 24px;
+  /* gap: 24px; */
+  gap: 2.5vh;
   width: 60vw;
   margin: 0 auto;
 }
 
 .partnership__benefit {
-  height: 64px;
+  /* height: 64px; */
+  height: 6.8vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -86,7 +89,7 @@
   background-color: var(--color-bg-secondary);
   border-radius: var(--border-radius-sm);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
-  font-size: 1.4rem;
+  font-size: 1.3em;
   color: var(--color-text-primary);
 }
 
@@ -114,7 +117,8 @@
 }
 
 .partnership__footer-btn {
-  margin: 60px auto 0 60px;
+  /* margin: 60px auto 0 60px; */
+  margin: 6.2vh auto 0 6.2vh;
   font-size: 1.25rem !important;
   padding: 6px 24px !important;
   color: var(--color-text-light) !important;
@@ -148,9 +152,13 @@
 
 @media (max-width: 991px) {
   .partnership {
-    height: auto !important; /* Desliga o fullscreen sticky no mobile para rolar livremente */
-    position: relative !important;
     padding: 80px 0;
+  }
+
+  .partnership__container {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
   }
   
   .partnership__title {
@@ -162,8 +170,81 @@
   }
 }
 
+@media (max-width: 880px) {
+  .partnership__benefits {
+    gap: 16px;
+  }
+
+  .partnership__benefit {
+    font-size: 1.1rem;
+    padding: 8px 24px;
+    gap: 48px;
+  }
+}
+
 @media (max-width: 767px) {
   .partnership__title {
+    font-size: 1.8rem;
+    padding: 0 36px;
+  }
+
+  .partnership__footer-btn {
+  font-size: 1.1rem !important;
+  padding: 4px 20px !important;
+  margin-left: 5vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .partnership__benefits {
+    gap: 12px;
+  }
+
+  .partnership__benefit {
+    height: 78px;
+    line-height: 20px;
+    gap: 16px;
+  }
+
+  .partnership__benefit-icon {
+    height: 14px;
+  }
+
+  .partnership__benefit-line {
+    width: 48px;
+    height: 2px;
+  }
+
+  .partnership__benefit-logo {
+    height: 20px;
+  }
+
+  .partnership__footer-btn {
+  margin-top: 3.8vh;
+  }
+}
+
+@media (max-width: 460px) {
+  .partnership__title {
     font-size: 1.6rem;
+    padding: 0;
+  }
+
+  .partnership__benefit {
+    font-size: 1rem;
+    padding: 8px 16px;
+    gap: 12px;
+  }
+
+  .partnership__benefit > div {
+    gap: 12px;
+  }
+
+  .partnership__benefit-line {
+    width: 24px;
+  }
+
+  .partnership__footer-btn {
+  margin-left: 2.6vh;
   }
 }

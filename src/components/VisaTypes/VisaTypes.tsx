@@ -57,7 +57,7 @@ export default function VisaTypes({ onOpenModal }: VisaTypesProps) {
               Profissionais com no mínimo 5 anos de atuação em áreas de interesse para os Estados Unidos, como tecnologia, saúde, ciências ou negócios.
             </p>
             <p className="visa-types__card-description">
-              Ideal ter pós-graduação ou mestrado e atender pelo menos 3 dos 7 requisitos do governo.
+              Ideal ter mestrado ou doutorado e atender pelo menos 3 dos 7 requisitos do governo.
             </p>
           </div>
         </div>
