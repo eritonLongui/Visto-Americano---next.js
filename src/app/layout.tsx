@@ -6,9 +6,9 @@ export const metadata: Metadata = {
   title: "Visto Americano | Nostrali",
   description: "Acesso reservado e seletivo para os vistos americanos EB-1 e EB-2 NIW. Realize sua análise prévia de elegibilidade de forma segura e confidencial com nosso corpo técnico e jurídico.",
   keywords: ["Visto Americano", "EB-1", "EB-2 NIW", "Green Card", "Nostrali Cidadania Italiana", "Imigração EUA", "Assessoria de Visto", "Qualificação de Visto"],
-  authors: [{ name: "Nostrali Cidadania Italiana" }],
+  authors: [{ name: "Gruppo Nostrali" }],
   openGraph: {
-    title: "Vistos Americanos EB-1 e EB-2 NIW | Gruppo Nostrali",
+    title: "Vistos Americanos EB-1 e EB-2 NIW",
     description: "Formulário de qualificação de possibilidade de vistos nas categorias EB-1 e EB-2 NIW.",
     type: "website",
     locale: "pt_BR",
