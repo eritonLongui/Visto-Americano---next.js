@@ -49,7 +49,8 @@
 
 /* Cabeçalho do Modal */
 .modal-box__header {
-  padding: 32px 40px 16px;
+  /* padding: 32px 40px 16px; */
+  padding: 3.4vh 40px 1.7vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -87,7 +88,8 @@
 
 /* Corpo do Modal */
 .modal-box__body {
-  padding: 16px 40px 40px;
+  /* padding: 16px 40px 40px; */
+  padding: 1.7vh 40px 3.8vh;
   overflow-y: auto;
   flex: 1;
 }
@@ -99,7 +101,8 @@
   text-transform: uppercase;
   color: var(--color-red-brand);
   letter-spacing: 0.08em;
-  margin-bottom: 8px;
+  /* margin-bottom: 8px; */
+  margin-bottom: 0.8vh;
   display: block;
 }
 
@@ -107,15 +110,18 @@
   font-size: 1.2rem;
   font-weight: 600;
   color: var(--color-light-warm);
-  margin-bottom: 24px;
+  /* margin-bottom: 24px; */
+  margin-bottom: 2.5vh;
 }
 
 /* Campos do Formulário */
 .form-group {
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
+  margin-bottom: 1.7vh;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  /* gap: 8px; */
+  gap: 0.8vh;
 }
 
 .form-group__label {
@@ -233,7 +239,8 @@
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  margin-top: 40px;
+  /* margin-top: 40px; */
+  margin-top: 4.2vh;
 }
 
 .modal-box__footer .button-premium {
@@ -246,12 +253,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 16px;
 }
 
 .result-screen__icon-container {
-  width: 80px;
-  height: 80px;
+  /* width: 80px; */
+  /* height: 80px; */
+  width: 8.4vh;
+  height: 8.4vh;
   border-radius: var(--border-radius-full);
   display: flex;
   align-items: center;
@@ -260,13 +268,11 @@
 
 .result-screen__icon-container--success {
   background-color: rgba(0, 140, 69, 0.1);
-  border: 1px solid rgba(0, 140, 69, 0.3);
   color: #008C45;
 }
 
 .result-screen__icon-container--fail {
   background-color: rgba(140, 28, 41, 0.1);
-  border: 1px solid rgba(140, 28, 41, 0.3);
   color: #ff4d62;
 }
 
@@ -274,7 +280,8 @@
   font-size: 1.6rem;
   font-weight: 700;
   color: var(--color-light-warm);
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
+  margin-bottom: 1.7vh;
 }
 
 .result-screen__text {
@@ -282,7 +289,8 @@
   color: var(--color-text-secondary);
   line-height: 1.7;
   max-width: 480px;
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
+  margin-bottom: 1.7vh;
   text-align: justify !important;
 }
 
@@ -306,7 +314,16 @@
 }
 
 .result-screen__form-container .result-screen__actions {
-  margin-top: 16px;
+  /* margin-top: 16px; */
+  margin-top: 1.7vh;
+}
+
+.result-screen__form-container .form-group {
+  gap: 0.4vh;
+}
+
+.result-screen__form-container .form-group__input {
+  height: 6vh;
 }
 
 /* Animações */
@@ -314,6 +331,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -324,28 +342,10 @@
     transform: translateY(30px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
-  }
-}
-
-/* Responsividade do Modal */
-@media (max-width: 767px) {
-  .modal-box {
-    max-height: 95vh;
-  }
-  
-  .modal-box__header {
-    padding: 24px 24px 12px;
-  }
-  
-  .modal-box__body {
-    padding: 12px 24px 24px;
-  }
-  
-  .result-screen__title {
-    font-size: 1.5rem;
   }
 }
 
@@ -369,14 +369,17 @@
     bottom: 0;
     opacity: 0;
   }
+
   15% {
     bottom: calc(100% + 12px);
     opacity: 1;
   }
+
   85% {
     bottom: calc(100% + 12px);
     opacity: 1;
   }
+
   100% {
     bottom: 0;
     opacity: 0;
@@ -401,16 +404,74 @@
     opacity: 0;
     transform: translateY(8px);
   }
+
   15% {
     opacity: 1;
     transform: translateY(0);
   }
+
   85% {
     opacity: 1;
     transform: translateY(0);
   }
+
   100% {
     opacity: 0;
     transform: translateY(8px);
+  }
+}
+
+/* Responsividade do Modal */
+@media (max-width: 767px) {
+  .modal-box {
+    width: 500px;
+  }
+}
+
+@media (max-width: 555px) {
+  .modal-overlay {
+    padding: 0;
+  }
+
+  .modal-box {
+    width: 90vw;
+  }
+}
+
+@media (max-width: 440px) {
+  .modal-box__step-indicator {
+    font-size: 0.7rem;
+  }
+
+  .modal-box__step-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-light-warm);
+    margin-bottom: 1vh;
+    transform: translateY(-8px);
+  }
+
+  .form-group__label {
+    font-size: 0.9rem;
+    line-height: 1rem;
+    height: 32px;
+  }
+
+  .result-screen .form-group__label {
+    height: auto;
+    margin-left: 8px;
+  }
+
+  .result-screen__title {
+    font-size: 1.3rem;
+  }
+
+  .result-screen__text {
+    line-height: 1.2rem;
+  }
+
+  .modal-box__footer .button-premium {
+    padding-top: 8px;
+    line-height: 1.2rem;
   }
 }

@@ -303,7 +303,7 @@ export default function QualificationModal({ isOpen, onClose }: QualificationMod
                     <CheckCircle size={44} />
                   </div>
                   <h4 className="result-screen__title">Seu perfil pode ser compatível!</h4>
-                  <p className="result-screen__text" style={{ marginBottom: "20px" }}>
+                  <p className="result-screen__text" style={{ marginBottom: "1vh" }}>
                     Preencha seus dados para que nossa equipe especialista dê sequência com o atendimento:
                   </p>
 
@@ -378,12 +378,12 @@ export default function QualificationModal({ isOpen, onClose }: QualificationMod
                     >
                       Fale conosco
                     </a>
-                    <button
+                    {/* <button
                       className="button-premium button-premium--secondary"
                       onClick={handleReset}
                     >
                       Refazer Análise
-                    </button>
+                    </button> */}
                   </div>
                 </>
               )}
