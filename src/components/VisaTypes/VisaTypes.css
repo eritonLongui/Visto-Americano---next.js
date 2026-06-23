@@ -10,7 +10,7 @@
   overflow: hidden;
   border-bottom: 1px solid rgba(204, 199, 193, 0.2);
   background: linear-gradient(-30deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 50%, var(--color-bg-primary) 100%);
-  padding-bottom: 80px;
+  padding-bottom: 7.2vh;
   margin-bottom: 80px;
 }
 
@@ -39,7 +39,8 @@
 
 .visa-types__header {
   text-align: center;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
+  margin-bottom: 4.1vh;
 }
 
 .visa-types__title {
@@ -69,10 +70,12 @@
   background-color: var(--color-bg-card);
   border-radius: var(--border-radius-lg);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-  padding: 48px;
+  /* padding: 48px; */
+  padding: 5vh 48px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  /* gap: 24px; */
+  gap: 2.4vh;
   transition: all var(--transition-normal);
 }
 
