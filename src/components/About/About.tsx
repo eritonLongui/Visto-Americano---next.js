@@ -40,7 +40,7 @@ export default function About() {
                     </div>
                     <div className="about__card reveal-on-scroll">
                         <img src="/about2.png" alt="Ícone de atendente" className="about__card-icon" />
-                        <h4 className="about__card-title">Atendimento personalizado</h4>
+                        <h4 className="about__card-title">Atendimento personalizado<br /></h4>
                     </div>
                     <div className="about__card reveal-on-scroll">
                         <img src="/about3.png" alt="Ícone de pacote completo" className="about__card-icon" />
