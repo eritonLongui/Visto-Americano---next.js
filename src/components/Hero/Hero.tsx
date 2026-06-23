@@ -77,7 +77,7 @@ export default function Hero({ onOpenModal }: HeroProps) {
 
         {/* Descrição Figma */}
         <p className="hero__description" ref={descRef}>
-          Faça a análise de perfil e descubra se os vistos EB-1 ou EB-2 são a melhor escolha para o seu sonho de morar nos Estados Unidos e ter o Green Card. Voltados para profissionais de alto desempenho, são as categorias mais valorizadas de visto para imigração.
+          Faça a análise de perfil e descubra se os vistos EB-1 ou EB-2 NIW são a melhor escolha para o seu sonho de morar nos Estados Unidos e ter o Green Card. Voltados para profissionais de alto desempenho, são as categorias mais valorizadas de visto para imigração.
         </p>
 
         {/* Ação */}
