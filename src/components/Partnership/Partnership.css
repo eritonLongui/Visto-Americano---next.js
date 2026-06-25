@@ -9,6 +9,7 @@
   display: flex;
   align-items: start;
   overflow: hidden;
+  margin-bottom: 80px;
 }
 
 .partnership__divider {
