@@ -40,6 +40,38 @@ export default function Footer() {
                 className="footer__logo-img"
               />
             </a>
+            <div className="footer__social">
+              <a 
+                href="https://www.facebook.com/nostralicidadaniaitaliana"
+                className="footer__social-link"
+              >
+                <img
+                  src="/icon-social-facebook.png"
+                  alt="Facebook Nostrali"
+                  className="footer__social-img footer__social-link--facebook"
+                />
+              </a>
+              <a 
+                href="https://www.instagram.com/nostralicidadaniaitaliana/"
+                className="footer__social-link"
+              >
+                <img
+                  src="/icon-social-instagram.png"
+                  alt="Instagram Nostrali"
+                  className="footer__social-img footer__social-link--instagram"
+                />
+              </a>
+              <a 
+                href="https://www.youtube.com/channel/UC9hMXLoB9aBGJSTG90YrseA"
+                className="footer__social-link"
+              >
+                <img
+                  src="/icon-social-youtube.png"
+                  alt="Youtube Nostrali"
+                  className="footer__social-img footer__social-link--youtube"
+                />
+              </a>
+            </div>
           </div>
 
           {/* Coluna 2: Navegação Rápida */}
