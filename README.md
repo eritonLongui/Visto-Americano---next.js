@@ -1,6 +1,6 @@
 ## Deploy
 
-Clique [https://visto-americano-next-js.vercel.app/](aqui) para visualisar o projeto
+[Clique aqui para visualisar o projeto](https://visto-americano-next-js.vercel.app/)
 
 ## Getting Started
 
