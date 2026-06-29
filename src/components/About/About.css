@@ -283,6 +283,19 @@
         font-size: 0.9rem;
         line-height: 1.2rem;
     }
+}
 
+@media (max-width: 437px) and (max-height: 800px) {
+    .about__card {
+        padding-bottom: 0.6rem;
+    } 
 
+    .about__card img {
+        height: 64px;
+        width: 64px;
+    }
+
+    .about__description {
+        line-height: 1.15rem;
+    }
 }
