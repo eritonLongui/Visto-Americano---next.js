@@ -29,7 +29,12 @@ body {
 }
 
 /* Tipografia Base */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-title);
   color: var(--color-text-primary);
   font-weight: 700;
@@ -195,4 +200,113 @@ button {
   z-index: 3;
   min-height: 80vh;
   box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-height: 699px) { /* Ajustes de responsividade em notebooks com telas menores */
+  h1 {
+    font-size: 3.2rem !important;
+  }
+
+  /* Ajuste global de padding vertical apenas para containers das seções alvo */
+  #requisitos .container, 
+  #vantagens .container, 
+  #assessoria .container,
+  #jornada .container {
+    padding-bottom: 2rem !important;
+  }
+
+  /* ---------------------------------
+     REQUISITOS (VisaTypes)
+  -----------------------------------*/
+  #requisitos .visa-types__container {
+    padding-top: 0 !important;
+  }
+  #requisitos .visa-types__title {
+    font-size: clamp(1.8rem, 4vh, 2rem) !important;
+    margin-bottom: 0.5rem !important;
+  }
+  #requisitos .visa-types__description {
+    font-size: clamp(0.9rem, 2vh, 1rem) !important;
+    margin-bottom: 1rem !important;
+  }
+  #requisitos .visa-types__grid {
+    gap: 1rem !important;
+  }
+  #requisitos .visa-types__card-name {
+    font-size: clamp(1.4rem, 2.5vh, 1.6rem) !important;
+  }
+  #requisitos .visa-types__card-description {
+    font-size: 0.85rem !important;
+    line-height: 1.3 !important;
+  }
+  #requisitos .visa-types__footer {
+    margin-bottom: 1.4rem;
+  }
+  #requisitos .visa-types__footer-text {
+    font-size: 1.1rem !important;
+  }
+  #requisitos .button-premium {
+    font-size: 1rem !important;
+  }
+
+  /* ---------------------------------
+     VANTAGENS (Partnership)
+  -----------------------------------*/
+  #vantagens .partnership__title {
+    font-size: clamp(1.8rem, 4vh, 2rem) !important;
+    margin-bottom: 0 !important;
+  }
+  #vantagens .partnership__benefit-text {
+    font-size: 1.1rem !important;
+  }
+  #vantagens .partnership__footer-btn {
+    margin-top: 1.5rem !important;
+    font-size: 1rem !important;
+  }
+
+  /* ---------------------------------
+     ASSESSORIA (About)
+  -----------------------------------*/
+  #assessoria .about-section__content {
+    gap: 2rem;
+  }
+  #assessoria .about__content {
+    padding-bottom: 0 !important;
+  }
+  #assessoria .about__title {
+    font-size: clamp(1.8rem, 4vh, 2rem) !important;
+  }
+  #assessoria .about__description {
+    font-size: 1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  #assessoria .about__card {
+    gap: 0.5rem !important;
+  }
+  #assessoria .about__card-icon {
+    width: 5rem !important;
+    height: 5rem !important;
+  }
+  #assessoria .about__card-title {
+    font-size: 1rem !important;
+  }
+
+  /* ---------------------------------
+     PROCESSO (Process - #jornada)
+  -----------------------------------*/
+  #jornada .process__title {
+    font-size: clamp(1.8rem, 4vh, 2rem) !important;
+  }
+  #jornada .process__step-badge {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  #jornada .process__step-title {
+    font-size: 1.4rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  #jornada .process__step-text {
+    font-size: 0.9rem !important;
+    line-height: 1.3 !important;
+  }
 }
