@@ -379,7 +379,7 @@
 
 @media (max-width: 448px) {
   .visa-types__container {
-    gap: 16px;
+    gap: 12px;
   }
 
   .visa-types__title {
@@ -388,6 +388,10 @@
 
   .visa-types__description {
     font-size: 0.85rem;
+  }
+
+  .visa-types__grid {
+    gap: 1rem;
   }
 
   .visa-types__card {
@@ -404,7 +408,7 @@
   }
 
   .visa-types__footer {
-    margin-top: 12px;
+    margin-top: 0;
     margin-right: 8px;
     flex-direction: column;
     align-items: end;

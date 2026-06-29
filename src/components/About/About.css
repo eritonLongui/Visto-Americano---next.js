@@ -271,11 +271,17 @@
 @media (max-width: 437px) {
     .about__card {
         padding-top: 0;
+        padding-bottom: 0.8rem;
+    }
+
+    .about__card img {
+        height: 80px;
+        width: 80px;
     }
 
     .about__description {
         font-size: 0.9rem;
-        line-height: 1.3rem;
+        line-height: 1.2rem;
     }
 
 

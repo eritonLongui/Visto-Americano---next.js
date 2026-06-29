@@ -232,7 +232,8 @@
   }
 
   .partnership__benefit {
-    font-size: 1rem;
+    font-size: 0.84rem;
+    height: 4rem;
     padding: 8px 16px;
     gap: 12px;
   }
